@@ -1,0 +1,15 @@
+{
+    "require": {
+        "doctrine/orm": "^3.3",
+        "doctrine/dbal": "^4.2",
+        "symfony/cache": "^7.2",
+        "smarty/smarty": "^5.5",
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "DuplexDrive\\": "DuplexDrive/"
+        }
+    }
+    
+}

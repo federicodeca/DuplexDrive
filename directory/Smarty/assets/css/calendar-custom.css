@@ -1,0 +1,12 @@
+.high-price {
+  background-color: #ffdddd !important;
+  color: red !important;
+}
+.low-price {
+  background-color: #ddffdd !important;
+  color: green !important;
+}
+.normal-price {
+  background-color: #ddddff !important;
+  color: white! important;
+}
