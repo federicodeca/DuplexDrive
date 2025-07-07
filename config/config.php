@@ -9,9 +9,5 @@
     define('COOKIE_EXP', 60 * 60 * 24 * 30); // 30 days
 
 
-    define('HOST','sandbox.smtp.mailtrap.io');
-    define('PORT', 2525);
-    define('USERNAME', '3e88807603196e');
-    define('PASSWORD', '');
-    
+    define('BREVO_API_KEY','insert your api key here');
     
