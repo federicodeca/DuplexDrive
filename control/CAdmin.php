@@ -24,7 +24,7 @@ class CAdmin {
     }
 
       /**
-     * this method is used to get info about th status of admin
+     * this method is used to get info about the status of admin
      * @return void
      */
     public static function getAdminStatus(): array {
@@ -54,7 +54,7 @@ class CAdmin {
         }
         
         if(USession::isSetSessionElement('admin')) {
-            $logged = true; // User is logged in
+            $logged = true; // Admin is logged in
             
         }
         if(!$logged) {
@@ -66,7 +66,7 @@ class CAdmin {
         
     }
 
-    // aggiungere auto nel database
+    // add cars in the database
     public static function addCar()
     {    
          if (CAdmin::isLogged()) {
@@ -85,7 +85,7 @@ class CAdmin {
         foreach ($photos as $photo) {
             $blobFile=file_get_contents($photo['tmp_name']);
             $image = new EImage($photo['name'],$photo['size'], $photo['type'],$blobFile);
-            $image->setCar($car); // collega l'immagine all'auto
+            $image->setCar($car); // link image to car
             FPersistentManager::getInstance()->uploadObj($image);
         }
 
@@ -96,7 +96,7 @@ class CAdmin {
     }
 
     /**
-     * this method is used to show the form to add a car, if the user is logged in
+     * this method is used to show the form to add a car, if the admin is logged in
      */
 
     public static function showCarForm() {
@@ -106,10 +106,11 @@ class CAdmin {
         $view->showAddCarForm($infout);
          }
     }
+
     //CONTROLLO PATENTE(license check)
 
     /**
-     * this method is used to show all the unchecked license, if the user is logged in
+     * this method is used to show all the unchecked license, if the admin is logged in
      */
 
     public static function showLicenseNotChecked () {
@@ -124,8 +125,8 @@ class CAdmin {
     }
 
     /**
-     * this method is used to check a license, if the user is logged in
-     * admin has to check if data expiration inserted match with data on the license photo
+     * this method is used to check a license, if the admin is logged in,
+     * the admin has to check if data expiration inserted match with data on the license photo
      */
     
     public  static function checkLicense (int $id) {
@@ -161,7 +162,7 @@ class CAdmin {
     }
 
     /**
-     * this method is used to show the unavailability of a car for rent, if the user is logged in
+     * this method is used to show the unavailability of a car for rent, if the admin is logged in
      * also show all the cars for rent in the database
      */
 
@@ -186,7 +187,7 @@ class CAdmin {
     }
     
     /**
-     * this method is used to insert an unavailability for a car for rent, if the user is logged in
+     * this method is used to insert an unavailability for a car for rent, if the admin is logged in
      * it checks if the car is available in the selected date range
      */
     public static function insertUnavailability() {
