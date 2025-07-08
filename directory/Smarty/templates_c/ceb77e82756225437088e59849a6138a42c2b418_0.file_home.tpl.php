@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.5.1, created on 2025-07-08 15:32:55
+/* Smarty version 5.5.1, created on 2025-07-08 16:03:26
   from 'file:home.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.5.1',
-  'unifunc' => 'content_686d1e077b8710_71370120',
+  'unifunc' => 'content_686d252e8372c3_94586226',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ceb77e82756225437088e59849a6138a42c2b418' => 
     array (
       0 => 'home.tpl',
-      1 => 1751981572,
+      1 => 1751983134,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_686d1e077b8710_71370120 (\Smarty\Template $_smarty_tpl) {
+function content_686d252e8372c3_94586226 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templates';
 ?><!DOCTYPE html>
 <html lang="en">
@@ -106,6 +106,7 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templ
                       <?php if ($_smarty_tpl->getValue('permission') === 'user') {?> 
                         <a class="dropdown-item" href="/DuplexDrive/User/insertLicense">Patente</a>
                         <a class="dropdown-item" href="/DuplexDrive/User/insertReview">Recensione</a>
+                        <a class="dropdown-item" href="/DuplexDrive/User/purchaseHistory">Riepilogo Acquisti</a>
                         <a class="dropdown-item" href="/DuplexDrive/User/showProfile">Profilo</a>
                       <?php }?>
                       <?php if ($_smarty_tpl->getValue('permission') === 'owner') {?>
@@ -284,7 +285,9 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templ
           </div>
           <div class="col-md-12">
             <div id="map">
-             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11793.047504139136!2d13.385407245971683!3d42.35825798648915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sit!2sit!4v1750455923682!5m2!1sit!2sit" width="1200" height="400" style="border:0; cursor: pointer;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="responsive-map"
+             <iframe class="map-custom" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11793.047504139136!2d13.385407245971683!3d42.35825798648915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sit!2sit!4v1750455923682!5m2!1sit!2sit" width="1200" height="400" style="border:0; cursor: pointer;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
             </div>
           </div>
         </div>

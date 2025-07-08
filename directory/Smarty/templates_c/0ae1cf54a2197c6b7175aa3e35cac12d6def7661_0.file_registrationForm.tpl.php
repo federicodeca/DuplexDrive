@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.5.1, created on 2025-07-05 15:41:37
+/* Smarty version 5.5.1, created on 2025-07-08 16:11:22
   from 'file:registrationForm.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.5.1',
-  'unifunc' => 'content_68692b91a78016_09552727',
+  'unifunc' => 'content_686d270a0d9926_72002287',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ae1cf54a2197c6b7175aa3e35cac12d6def7661' => 
     array (
       0 => 'registrationForm.tpl',
-      1 => 1751722890,
+      1 => 1751983878,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_68692b91a78016_09552727 (\Smarty\Template $_smarty_tpl) {
+function content_686d270a0d9926_72002287 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templates';
 ?><!DOCTYPE html>
 <html lang="en">
@@ -67,14 +67,14 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templ
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>Duplex <em>Drive</em></h2></a>
+          <a class="navbar-brand" href="/DuplexDrive/User/home"><h2>Duplex <em>Drive</em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="RentalTopGear/User/home">Home
+                    <a class="nav-link" href="/User/home">Home
                       <span class="sr-only">(current)</span>
                     </a>
                 </li> 
@@ -144,8 +144,7 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templ
             
             <div class="col-md-2" style="margin-top: 20px;" >
               <label for="inputZip" class="form-label" style="color:aliceblue">Zip</label>
-              <input type="text" class="form-control" id="inputZip" name="zip" pattern="\d<?php echo 5;?>
-" maxlength="5" required ="">
+              <input type="text" class="form-control" id="inputZip" name="zip"   pattern="[0-9]{5}"  required ="">
             </div>
           </div> 
 
