@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.5.1, created on 2025-07-05 15:24:49
+/* Smarty version 5.5.1, created on 2025-07-08 15:32:55
   from 'file:home.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.5.1',
-  'unifunc' => 'content_686927a1d329b1_53656220',
+  'unifunc' => 'content_686d1e077b8710_71370120',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ceb77e82756225437088e59849a6138a42c2b418' => 
     array (
       0 => 'home.tpl',
-      1 => 1751721884,
+      1 => 1751981572,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_686927a1d329b1_53656220 (\Smarty\Template $_smarty_tpl) {
+function content_686d1e077b8710_71370120 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templates';
 ?><!DOCTYPE html>
 <html lang="en">
@@ -74,7 +74,7 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templ
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>Duplex <em>Drive</em></h2></a>
+          <a class="navbar-brand" href="/DuplexDrive/User/home"><h2>Duplex <em>Drive</em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -84,7 +84,7 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templ
               <li id="user-box" class="nav-item d-flex align-items-center"></li>
 
               <li class="nav-item active">
-                <a class="nav-link" href="RentalTopGear/User/home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/User/home">Home <span class="sr-only">(current)</span></a>
               </li>
 
               <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/carSearcher/">Acquista</a></li>
@@ -293,7 +293,7 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templ
 
     <div class="mt-3"></div>
 
-    <div class="services" style="background-image: url(/RentalTopGear/directory/Smarty/assets/images/other-image-fullscren-1-1920x900.jpg);" >
+    <div class="services" style="background-image: url(/DuplexDrive/directory/Smarty/assets/images/other-image-fullscren-1-1920x900.jpg);" >
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -312,7 +312,7 @@ $foreach0DoElse = false;
 ?>
           <div class="service-item mx-2">
             <div class="service-item">
-              <a href="#" class="services-item-image"><img src="/DuplexDrive/directory/Smarty/assets/images/reviewbox.jpg" class="img-fluid" alt=""></a>
+              <div class="services-item-image"><img src="/DuplexDrive/directory/Smarty/assets/images/reviewbox.jpg" class="img-fluid" alt=""></div>
 
               <div class="down-content">
                 <h4><a href="#"><?php
@@ -414,27 +414,10 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
  src="/DuplexDrive/directory/Smarty/assets/js/owl.carousel.min.js"><?php echo '</script'; ?>
 >
     
-     
+    <?php echo '<script'; ?>
+ src="\DuplexDrive\directory\Smarty\js\carousel-home.js"><?php echo '</script'; ?>
+>
 
-       <?php echo '<script'; ?>
->
-  $(document).ready(function(){
-    $('.reviews-carousel').owlCarousel({
-      loop: true,
-      margin: 20,
-      nav: true,
-      dots: true,
-      autoplay: true,
-      autoplayTimeout: 5000,
-      responsive:{
-        0:{ items:1 },
-        768:{ items:2 },
-        992:{ items:3 }
-      }
-    });
-  });
-<?php echo '</script'; ?>
->
   </body>
 </html><?php }
 }

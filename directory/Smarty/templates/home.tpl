@@ -243,7 +243,7 @@
 
     <div class="mt-3"></div>
 
-    <div class="services" style="background-image: url(/directory/Smarty/assets/images/other-image-fullscren-1-1920x900.jpg);" >
+    <div class="services" style="background-image: url(/DuplexDrive/directory/Smarty/assets/images/other-image-fullscren-1-1920x900.jpg);" >
       <div class="container">
         <div class="row">
           <div class="col-md-12">
