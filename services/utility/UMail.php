@@ -66,7 +66,7 @@ class UMail {
         try {
            
             $result = $apiInstance->sendTransacEmail($sendSmtpEmail);
-            var_dump($result);
+          
         } catch (\Exception $e) {
             error_log('Errore invio mail con Brevo: ' . $e->getMessage());
         }
