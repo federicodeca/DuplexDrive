@@ -101,6 +101,9 @@ class COwner {
     }
 
 
+    /**
+    * this method is used to show the period selector for period
+     */
     public static function showRentStatsForPeriod() {
         if (COwner::isLogged()){
             $infout=COwner::getOwnerStatus();
@@ -109,7 +112,10 @@ class COwner {
         }
     }
 
+    /**
+     * this method is used to get the rent stats for a specific selected period, it will return the total price of the rents for each day in the period even for the days with zero rents
 
+     */
     public static function getRentStatsForPeriod() {
 
         if (COwner::isLogged()) {
@@ -120,10 +126,10 @@ class COwner {
           
 
             $start = new DateTime("$year-$month-01");
-            $end = (clone $start)->modify('+1 month');
+            $end = (clone $start)->modify('+1 month'); // add an entire month to include the last day of the month ex= 01 jan till 01 feb excluded
             $AllDay = [];
 
-            $period = new DatePeriod($start, new DateInterval('P1D'), $end);
+            $period = new DatePeriod($start, new DateInterval('P1D'), $end); // Create a period of one day intervals from start to end
             foreach ($period as $data) {
                 $AllDay[] = $data->format('Y-m-d');
             }
@@ -152,6 +158,10 @@ class COwner {
             $view->showSelectedPeriodStats($infout, $rentTotalPerDay);
         }
     }
+
+    /**
+     * this method is used to show the period selector for sale info
+     */
     public static function showSaleStatsForPeriod() {
         if (COwner::isLogged()){
             $infout=COwner::getOwnerStatus();
@@ -160,7 +170,9 @@ class COwner {
         }
     }
 
-    
+    /**
+     * this method is used to get the number of sales for each month in a specific year
+     */
     public static function getNumberOfSalePerPeriod() {
     
         if (COwner::isLogged()) {
@@ -173,10 +185,11 @@ class COwner {
             $salesPerPeriod=FPersistentManager::getInstance()->getSalesForPeriod($start, $end);
             $salesPerMonth = [];
             $salesPerName = [];
+
             if(!empty($salesPerPeriod)){
                 foreach ($salesPerPeriod as $order) {
                     $date = $order->getOrderDate()->format('Y-m-d');
-                    $month = (int)$order->getOrderDate()->format('m');
+                    $month = (int)$order->getOrderDate()->format('m'); // month as 01 became 1 
                     if (!isset($salesPerMonth[$month])) {
                         $salesPerMonth[$month] = 0;
                     }
@@ -206,6 +219,10 @@ class COwner {
         }
     }
 
+
+    /**
+     * this method is used to show the client stats, it provides the average review and the number of reviews for each rating from 1 to 5
+     */
     public static function showClientStats() {
         if (COwner::isLogged()) {
             $infout = COwner::getOwnerStatus();

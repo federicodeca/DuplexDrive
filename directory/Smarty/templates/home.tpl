@@ -50,7 +50,7 @@
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>Duplex <em>Drive</em></h2></a>
+          <a class="navbar-brand" href="/DuplexDrive/User/home"><h2>Duplex <em>Drive</em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -257,7 +257,7 @@
           {foreach from=$reviews item=review}
           <div class="service-item mx-2">
             <div class="service-item">
-              <a href="#" class="services-item-image"><img src="/DuplexDrive/directory/Smarty/assets/images/reviewbox.jpg" class="img-fluid" alt=""></a>
+              <div class="services-item-image"><img src="/DuplexDrive/directory/Smarty/assets/images/reviewbox.jpg" class="img-fluid" alt=""></div>
 
               <div class="down-content">
                 <h4><a href="#">{for $i = 0 to ($review->getRating() - 1)}<i class="fa-solid fa-star mr-2"></i>{/for}</a></h4>
