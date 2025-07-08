@@ -288,7 +288,7 @@
                 <div class="carousel-inner">
                   {foreach from=$car->getPhoto() item=photo name=carosello}
                     <div class="carousel-item {if $smarty.foreach.carosello.first}active{/if}">
-                      <img    src="data:{$photo->getType()};base64,{$photo->getEncodedData()}" class="d-block w-100 image-carousel-custom" alt="Immagine {$smarty.foreach.carosello.iteration}">
+                                           <img src="data:{$photo->getType()};base64,{$photo->getEncodedData()}" class="d-block w-100 img-fluid image-carousel-custom" alt="Immagine {$smarty.foreach.carosello.iteration}">
                     </div>
                   {/foreach}
                 </div>
