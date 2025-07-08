@@ -382,4 +382,14 @@ class FPersistentManager {
         $result = FPerson::verify('email', $email);
         return $result;
     }
+
+    public static function getOrdersByUser($user){
+        $result = FSale::retrieveSaleByUser($user);
+        return $result;
+    }
+
+    public static function getRentsByUser($user){
+        $result = FRent::retrieveRentByUser($user);
+        return $result;
+    }
 }

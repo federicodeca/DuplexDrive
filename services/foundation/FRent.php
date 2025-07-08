@@ -21,4 +21,12 @@ class FRent {
         return $rents;
     }
 
+    public static function retrieveRentByUser($user) {
+        $dql = "SELECT r FROM ERent r WHERE r.user = :user";
+        $params = ['user' => $user];
+        $rents = FEntityManager::getInstance()->doQuery($dql, $params);
+        
+        return $rents;
+    }
+
 }

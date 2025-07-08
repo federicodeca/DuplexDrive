@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.5.1, created on 2025-07-08 16:03:26
+/* Smarty version 5.5.1, created on 2025-07-08 17:45:59
   from 'file:home.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.5.1',
-  'unifunc' => 'content_686d252e8372c3_94586226',
+  'unifunc' => 'content_686d3d37c0be35_01699963',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ceb77e82756225437088e59849a6138a42c2b418' => 
     array (
       0 => 'home.tpl',
-      1 => 1751983134,
+      1 => 1751989179,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_686d252e8372c3_94586226 (\Smarty\Template $_smarty_tpl) {
+function content_686d3d37c0be35_01699963 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templates';
 ?><!DOCTYPE html>
 <html lang="en">
@@ -106,7 +106,7 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templ
                       <?php if ($_smarty_tpl->getValue('permission') === 'user') {?> 
                         <a class="dropdown-item" href="/DuplexDrive/User/insertLicense">Patente</a>
                         <a class="dropdown-item" href="/DuplexDrive/User/insertReview">Recensione</a>
-                        <a class="dropdown-item" href="/DuplexDrive/User/purchaseHistory">Riepilogo Acquisti</a>
+                        <a class="dropdown-item" href="/DuplexDrive/User/ordersHistory">Ordini</a>
                         <a class="dropdown-item" href="/DuplexDrive/User/showProfile">Profilo</a>
                       <?php }?>
                       <?php if ($_smarty_tpl->getValue('permission') === 'owner') {?>

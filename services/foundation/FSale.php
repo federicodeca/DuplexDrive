@@ -21,4 +21,14 @@ class FSale {
         return $sales;
     }
 
+    public static function retrieveSaleByUser($user) {
+        $dql = "SELECT s FROM ESale s WHERE s.user = :user";
+        $params = [
+            'user' => $user
+        ];
+        $sales = FEntityManager::getInstance()->doQuery($dql, $params);
+        
+        return $sales;
+    }
+
 }

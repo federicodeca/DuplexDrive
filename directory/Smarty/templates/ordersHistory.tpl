@@ -62,7 +62,7 @@
                     </a>
                 </li> 
     
-              <li class="nav-item"><a class="nav-link active" href="/DuplexDrive/User/carSearcher/">Acquista</a></li>
+              <li class="nav-item"><a class="nav-link " href="/DuplexDrive/User/carSearcher/">Acquista</a></li>
 
               <li class="nav-item"><a class="nav-link " href="/DuplexDrive/User/showCarsForRent/">Noleggia</a></li>
 
@@ -71,7 +71,7 @@
               {if $isLogged}
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMore" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMore" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       benvenuto {$username} <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMore">
@@ -79,6 +79,7 @@
                       {if $permission === 'user'} 
                         <a class="dropdown-item" href="/DuplexDrive/User/insertLicense">Patente</a>
                         <a class="dropdown-item" href="/DuplexDrive/User/insertReview">Recensione</a>
+                        <a class="dropdown-item" href="/DuplexDrive/User/ordersHistory">Ordini</a>
                         <a class="dropdown-item" href="/DuplexDrive/User/showProfile">Profilo</a>
                       {/if}
                       {if $permission === 'owner'}
@@ -122,6 +123,91 @@
      <!-- Page Content -->
        <div class="page-heading about-heading header-text"  style="background-image: url(/DuplexDrive/directory/Smarty/assets/images/other-image-fullscren-1-1920x900.jpg);"">
       <div class="container">
+               <div class="col-12 tm-block-col my-4">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll mb-5" style="height: 500px; width: 1200px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; color:white">
+                        <h2 class="tm-block-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                            <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+                            </svg>
+                            Acquisti</h2>
+                        <table class="table" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">NUM. ORDINE</th>
+                                    <th scope="col">MARCA AUTO</th>
+                                    <th scope="col">MODELLO AUTO</th>
+                                    <th scope="col">DATA ORDINE</th>
+                                    <th scope="col">TOTALE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        
+
+                                
+                         
+                                <!--- Lista auto acquistate -->
+                                {assign var="total" value=0}
+                                {foreach from=$orders item=sale}
+                                    <tr>
+                                        <td>{$sale->getOrderId()}</td>
+                                        <td>{$sale->getCarForSale()->getBrand()}</td>
+                                        <td>{$sale->getCarForSale()->getModel()}</td>
+                                        <td>{$sale->getOrderDate()->format("d/m/Y")}</td>
+                                        <td>{$sale->getPrice()}</td>
+                                        {assign var="total" value=$total + $sale->getPrice()}
+                                    </tr>
+                                {/foreach} 
+                                </tbody>
+                        </table> 
+
+                    </div>
+        
+                
+
+
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll" style="height: 500px;  width: 1200px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; color:white">
+                        <h2 class="tm-block-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                            <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+                            </svg>
+                            Noleggi</h2>
+                        <table class="table" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">NUM. ORDINE</th>
+                                    <th scope="col">MARCA AUTO</th>
+                                    <th scope="col">MODELLO AUTO</th>
+                                    <th scope="col">DATA INIZIO</th>
+                                    <th scope="col">DATA FINE</th>
+                                    <th scope="col">TOTALE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        
+
+                                
+                         
+                                <!--- Lista auto noleggiate -->
+                                {assign var="total" value=0}
+                                {foreach from=$rents item=rent}
+                                    <tr>
+                                        <td>{$rent->getOrderId()}</td>
+                                        <td>{$rent->getAuto()->getBrand()}</td>
+                                        <td>{$rent->getAuto()->getModel()}</td>
+                                        <td>{$rent->getIdUnavailability()->getStart()->format("d/m/Y")}</td>
+                                        <td>{$rent->getIdUnavailability()->getEnd()->format("d/m/Y")}</td>
+                                        <td>{$rent->getTotalPrice()}</td>
+                                        {assign var="total" value=$total + $sale->getPrice()}
+                                    </tr>
+                                {/foreach} 
+                                </tbody>
+                        </table> 
+
+                    </div>
+                    </div>
+                </div>
 
       </div>
     </div>

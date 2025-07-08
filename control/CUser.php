@@ -869,17 +869,18 @@ class CUser {
 
     }
 
-    public static function showPurchasedHistory() {
+    public static function ordersHistory() {
 
         if (CUser::isLogged()) {
 
             $infout=CUser::getUserStatus();
             $idUser = USession::getElementFromSession('user');
             $user = FPersistentManager::getInstance()->getObjectbyId(EUser::class, $idUser);
-            $purchases = FPersistentManager::getInstance()->getPurchasesByUser($user);
+            $purchases = FPersistentManager::getInstance()->getOrdersByUser($user);
+            $rents = FPersistentManager::getInstance()->getRentsByUser($user);
 
             $view = new VUser();
-            $view->showPurchasedHistory($purchases, $infout); // Show the purchase history of the user
+            $view->showOrdersHistory($purchases, $rents, $infout); // Show the purchase history of the user
         } else {
             header('Location: /DuplexDrive/User/Home');
         }

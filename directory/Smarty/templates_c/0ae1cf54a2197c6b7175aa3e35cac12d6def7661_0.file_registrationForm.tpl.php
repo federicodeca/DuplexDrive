@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.5.1, created on 2025-07-08 16:11:22
+/* Smarty version 5.5.1, created on 2025-07-08 16:23:13
   from 'file:registrationForm.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.5.1',
-  'unifunc' => 'content_686d270a0d9926_72002287',
+  'unifunc' => 'content_686d29d1912398_75688611',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ae1cf54a2197c6b7175aa3e35cac12d6def7661' => 
     array (
       0 => 'registrationForm.tpl',
-      1 => 1751983878,
+      1 => 1751983945,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_686d270a0d9926_72002287 (\Smarty\Template $_smarty_tpl) {
+function content_686d29d1912398_75688611 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templates';
 ?><!DOCTYPE html>
 <html lang="en">
@@ -144,7 +144,7 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templ
             
             <div class="col-md-2" style="margin-top: 20px;" >
               <label for="inputZip" class="form-label" style="color:aliceblue">Zip</label>
-              <input type="text" class="form-control" id="inputZip" name="zip"   pattern="[0-9]{5}"  required ="">
+              <input type="text" class="form-control" id="inputZip" name="zip"  pattern="[0-9]{5}"  required ="">
             </div>
           </div> 
 
