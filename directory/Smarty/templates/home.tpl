@@ -338,24 +338,7 @@
     <script src="/DuplexDrive/directory/Smarty/assets/js/owl.js"></script>
     <script src="/DuplexDrive/directory/Smarty/assets/js/owl.carousel.min.js"></script>
     
-     
+    <script src="\DuplexDrive\directory\Smarty\js\carousel-home.js"></script>
 
-       <script>
-  $(document).ready(function(){
-    $('.reviews-carousel').owlCarousel({
-      loop: true,
-      margin: 20,
-      nav: true,
-      dots: true,
-      autoplay: true,
-      autoplayTimeout: 5000,
-      responsive:{
-        0:{ items:1 },
-        768:{ items:2 },
-        992:{ items:3 }
-      }
-    });
-  });
-</script>
   </body>
 </html>
