@@ -321,7 +321,7 @@
           </div>
           <div class="modal-body">
             <div class="contact-form">
-              <form action="/User/loginAndCreditRequirement" id="modal-contact">
+              <form action="/DuplexDrive/User/loginAndCreditRequirement" id="modal-contact">
                   <div class="row">
                        <div class="col-md-6">
                           <fieldset>
