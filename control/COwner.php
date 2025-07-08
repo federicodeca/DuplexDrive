@@ -52,47 +52,52 @@ class COwner {
     
 
     /**
-     * this method show an home page for the owner, if the owner is logged in
+     * this method show an home page for the owner, if the owner is logged in this method will show the home page  with the sale and rent orders
      * @return void
      */
     public static function home() {
-    $saleOrders = [];
-    $rentOrders = [];
-
-    
-    
-
-    $infout=COwner::getOwnerStatus();
-
-    $saleOrders = FPersistentManager::getInstance()->getSaleOrders(ESale::class);
-    $rentOrders = FPersistentManager::getInstance()->getRentOrders(ERent::class);
-
-
-
-
-    $rentTotalPerDay = [];
-    foreach ($rentOrders as $order) {
-        $date = $order->getOrderDate()->format('Y-m-d');
-        if (!isset($rentTotalPerDay[$date])) {
-            $rentTotalPerDay[$date] = 0;
-        }
-        $rentTotalPerDay[$date] += $order->getTotalPrice();
         
-    }
-
-    $saleTotalPerDay = [];  
-    foreach ($saleOrders as $order) {
-        $date = $order->getOrderDate()->format('Y-m-d');
-        if (!isset($saleTotalPerDay[$date])) {
-            $saleTotalPerDay[$date] = 0;
-        }
-        $saleTotalPerDay[$date] += $order->getPrice();
+    if (COwner::isLogged()) {
+    
         
-    }
+        $saleOrders = [];
+        $rentOrders = [];
 
-    $view = new VOwner();
-    $view->showOwnerHome($saleOrders, $rentOrders,$rentTotalPerDay,$saleTotalPerDay,$infout);
+        
+        
 
+        $infout=COwner::getOwnerStatus();
+
+        $saleOrders = FPersistentManager::getInstance()->getSaleOrders(ESale::class);
+        $rentOrders = FPersistentManager::getInstance()->getRentOrders(ERent::class);
+
+
+
+
+        $rentTotalPerDay = [];
+        foreach ($rentOrders as $order) {
+            $date = $order->getOrderDate()->format('Y-m-d');
+            if (!isset($rentTotalPerDay[$date])) {
+                $rentTotalPerDay[$date] = 0;
+            }
+            $rentTotalPerDay[$date] += $order->getTotalPrice();
+            
+        }
+
+        $saleTotalPerDay = [];  
+        foreach ($saleOrders as $order) {
+            $date = $order->getOrderDate()->format('Y-m-d');
+            if (!isset($saleTotalPerDay[$date])) {
+                $saleTotalPerDay[$date] = 0;
+            }
+            $saleTotalPerDay[$date] += $order->getPrice();
+            
+        }
+
+        $view = new VOwner();
+        $view->showOwnerHome($saleOrders, $rentOrders,$rentTotalPerDay,$saleTotalPerDay,$infout);
+
+        }
     }
 
 
