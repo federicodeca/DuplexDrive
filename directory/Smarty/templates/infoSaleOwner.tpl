@@ -71,7 +71,7 @@
               <li id="user-box" class="nav-item d-flex align-items-center"></li>
 
               <li class="nav-item">
-                <a class="nav-link" href="RentalTopGear/User/home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/User/home">Home <span class="sr-only">(current)</span></a>
               </li>
 
               <li class="nav-item"><a class="nav-link active" href="/DuplexDrive/Owner/showSaleStatsForPeriod">Numero vendite</a></li>

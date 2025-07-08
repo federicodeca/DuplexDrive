@@ -63,7 +63,7 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="RentalTopGear/User/home">Home
+                    <a class="nav-link" href="/User/home">Home
                       <span class="sr-only">(current)</span>
                     </a>
                 </li> 
@@ -163,7 +163,7 @@
                   
 
                   <div class="col-md-12 my-5 ">
-                  <a class="btn btn-primary" href="RentalTopGear/User/home">Vai alla Home</a>
+                  <a class="btn btn-primary" href="/User/home">Vai alla Home</a>
                   </div>
                 {/if}
               
