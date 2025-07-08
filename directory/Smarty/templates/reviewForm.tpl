@@ -70,6 +70,7 @@
                       {if $permission === 'user'} 
                         <a class="dropdown-item" href="/DuplexDrive/User/insertLicense">Patente</a>
                         <a class="dropdown-item" href="/DuplexDrive/User/insertReview">Recensione</a>
+                        <a class="dropdown-item" href="/DuplexDrive/User/ordersHistory">Ordini</a>vv                        
                         <a class="dropdown-item" href="/DuplexDrive/User/showProfile">Profilo</a>
                       {/if}
                       <a class="dropdown-item" href="/DuplexDrive/User/logout">Esci</a>

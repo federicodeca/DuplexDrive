@@ -80,6 +80,7 @@
                         <a class="dropdown-item" href="/DuplexDrive/User/insertLicense">Patente</a>
                         <a class="dropdown-item" href="/DuplexDrive/User/insertReview">Recensione</a>
                         <a class="dropdown-item" href="/DuplexDrive/User/showProfile">Profilo</a>
+                        <a class="dropdown-item" href="/DuplexDrive/User/ordersHistory">Ordini</a>
                       {/if}
                       {if $permission === 'owner'}
                         <a class="dropdown-item" href="/DuplexDrive/Owner/home">Resoconto Azienda</a>

@@ -82,6 +82,7 @@
                       {if $permission === 'user'} 
                         <a class="dropdown-item" href="/DuplexDrive/User/insertLicense">Patente</a>
                         <a class="dropdown-item" href="/DuplexDrive/User/insertReview">Recensione</a>
+                        <a class="dropdown-item" href="/DuplexDrive/User/ordersHistory">Ordini</a>
                         <a class="dropdown-item" href="/DuplexDrive/User/showProfile">Profilo</a>
                       {/if}
                       {if $permission === 'owner'}
