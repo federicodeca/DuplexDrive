@@ -24,7 +24,7 @@ class COwner {
         }
         if(!$logged) {
         
-        header('Location: /DuplexDrive/User/login'); // Redirect to login page if not logged in
+        header('Location: /DuplexDrive/User/home'); // Redirect to home page if not logged in
         exit();}
 
         return $logged;
@@ -56,7 +56,7 @@ class COwner {
      * @return void
      */
     public static function home() {
-        
+
     if (COwner::isLogged()) {
     
         
