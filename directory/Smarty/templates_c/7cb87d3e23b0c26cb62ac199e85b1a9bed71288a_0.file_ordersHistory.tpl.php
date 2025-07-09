@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.5.1, created on 2025-07-08 18:22:47
+/* Smarty version 5.5.1, created on 2025-07-09 17:49:44
   from 'file:ordersHistory.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.5.1',
-  'unifunc' => 'content_686d45d73225f8_77003088',
+  'unifunc' => 'content_686e8f985395c8_52936704',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7cb87d3e23b0c26cb62ac199e85b1a9bed71288a' => 
     array (
       0 => 'ordersHistory.tpl',
-      1 => 1751991764,
+      1 => 1752076181,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_686d45d73225f8_77003088 (\Smarty\Template $_smarty_tpl) {
+function content_686e8f985395c8_52936704 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templates';
 ?><!DOCTYPE html>
 <html lang="en">
@@ -150,120 +150,111 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\DuplexDrive\\directory\\Smarty\\templ
 
      <!-- Page Content -->
        <div class="page-heading about-heading header-text"  style="background-image: url(/DuplexDrive/directory/Smarty/assets/images/other-image-fullscren-1-1920x900.jpg);"">
-      <div class="container">
-               <div class="col-12 tm-block-col my-4">
-                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll mb-5" style="height: 500px; width: 1200px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; color:white">
-                        <h2 class="tm-block-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
-                            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
-                            <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
-                            </svg>
-                            Acquisti</h2>
-                        <table class="table" style="width: 100%;">
-                            <thead>
-                                <tr>
-                                    <th scope="col">NUM. ORDINE</th>
-                                    <th scope="col">MARCA AUTO</th>
-                                    <th scope="col">MODELLO AUTO</th>
-                                    <th scope="col">DATA ORDINE</th>
-                                    <th scope="col">TOTALE</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                        
-
-                                
-                         
-                                <!--- Lista auto acquistate -->
-                                <?php $_smarty_tpl->assign('total', 0, false, NULL);?>
-                                <?php
+          <div class="container">
+            <div class="col-12 tm-block-col my-4">
+              <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll mb-5" style="min-height: 300px; border: 1px solid #ccc; padding: 10px; color:white">
+            <h2 class="tm-block-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+                </svg>
+                Acquisti
+            </h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover" style="width: 100%;">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">NUM. ORDINE</th>
+                            <th scope="col">MARCA AUTO</th>
+                            <th scope="col">MODELLO AUTO</th>
+                            <th scope="col">DATA ORDINE</th>
+                            <th scope="col">TOTALE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--- Lista auto acquistate -->
+                        <?php $_smarty_tpl->assign('total', 0, false, NULL);?>
+                        <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('orders'), 'sale');
 $foreach0DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('sale')->value) {
 $foreach0DoElse = false;
 ?>
-                                    <tr>
-                                        <td><?php echo $_smarty_tpl->getValue('sale')->getOrderId();?>
+                            <tr>
+                                <td><?php echo $_smarty_tpl->getValue('sale')->getOrderId();?>
 </td>
-                                        <td><?php echo $_smarty_tpl->getValue('sale')->getCarForSale()->getBrand();?>
+                                <td><?php echo $_smarty_tpl->getValue('sale')->getCarForSale()->getBrand();?>
 </td>
-                                        <td><?php echo $_smarty_tpl->getValue('sale')->getCarForSale()->getModel();?>
+                                <td><?php echo $_smarty_tpl->getValue('sale')->getCarForSale()->getModel();?>
 </td>
-                                        <td><?php echo $_smarty_tpl->getValue('sale')->getOrderDate()->format("d/m/Y");?>
+                                <td><?php echo $_smarty_tpl->getValue('sale')->getOrderDate()->format("d/m/Y");?>
 </td>
-                                        <td><?php echo $_smarty_tpl->getValue('sale')->getPrice();?>
+                                <td><?php echo $_smarty_tpl->getValue('sale')->getPrice();?>
 </td>
-                                        <?php $_smarty_tpl->assign('total', $_smarty_tpl->getValue('total')+$_smarty_tpl->getValue('sale')->getPrice(), false, NULL);?>
-                                    </tr>
-                                <?php
+                                <?php $_smarty_tpl->assign('total', $_smarty_tpl->getValue('total')+$_smarty_tpl->getValue('sale')->getPrice(), false, NULL);?>
+                            </tr>
+                        <?php
 }
-$_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?> 
-                                </tbody>
-                        </table> 
+$_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-                    </div>
-        
-                
-
-
-                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll" style="height: 500px;  width: 1200px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; color:white">
-                        <h2 class="tm-block-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
-                            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
-                            <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
-                            </svg>
-                            Noleggi</h2>
-                        <table class="table" style="width: 100%;">
-                            <thead>
-                                <tr>
-                                    <th scope="col">NUM. ORDINE</th>
-                                    <th scope="col">MARCA AUTO</th>
-                                    <th scope="col">MODELLO AUTO</th>
-                                    <th scope="col">DATA INIZIO</th>
-                                    <th scope="col">DATA FINE</th>
-                                    <th scope="col">TOTALE</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                        
-
-                                
-                         
-                                <!--- Lista auto noleggiate -->
-                                <?php $_smarty_tpl->assign('total', 0, false, NULL);?>
-                                <?php
+        <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll" style="min-height: 300px; border: 1px solid #ccc; padding: 10px; color:white">
+            <h2 class="tm-block-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+                </svg>
+                Noleggi
+            </h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover" style="width: 100%;">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">NUM. ORDINE</th>
+                            <th scope="col">MARCA AUTO</th>
+                            <th scope="col">MODELLO AUTO</th>
+                            <th scope="col">DATA INIZIO</th>
+                            <th scope="col">DATA FINE</th>
+                            <th scope="col">TOTALE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--- Lista auto noleggiate -->
+                        <?php $_smarty_tpl->assign('total', 0, false, NULL);?>
+                        <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('rents'), 'rent');
 $foreach1DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('rent')->value) {
 $foreach1DoElse = false;
 ?>
-                                    <tr>
-                                        <td><?php echo $_smarty_tpl->getValue('rent')->getOrderId();?>
+                            <tr>
+                                <td><?php echo $_smarty_tpl->getValue('rent')->getOrderId();?>
 </td>
-                                        <td><?php echo $_smarty_tpl->getValue('rent')->getAuto()->getBrand();?>
+                                <td><?php echo $_smarty_tpl->getValue('rent')->getAuto()->getBrand();?>
 </td>
-                                        <td><?php echo $_smarty_tpl->getValue('rent')->getAuto()->getModel();?>
+                                <td><?php echo $_smarty_tpl->getValue('rent')->getAuto()->getModel();?>
 </td>
-                                        <td><?php echo $_smarty_tpl->getValue('rent')->getIdUnavailability()->getStart()->format("d/m/Y");?>
+                                <td><?php echo $_smarty_tpl->getValue('rent')->getIdUnavailability()->getStart()->format("d/m/Y");?>
 </td>
-                                        <td><?php echo $_smarty_tpl->getValue('rent')->getIdUnavailability()->getEnd()->format("d/m/Y");?>
+                                <td><?php echo $_smarty_tpl->getValue('rent')->getIdUnavailability()->getEnd()->format("d/m/Y");?>
 </td>
-                                        <td><?php echo $_smarty_tpl->getValue('rent')->getTotalPrice();?>
+                                <td><?php echo $_smarty_tpl->getValue('rent')->getTotalPrice();?>
 </td>
-                                        <?php $_smarty_tpl->assign('total', $_smarty_tpl->getValue('total')+$_smarty_tpl->getValue('sale')->getPrice(), false, NULL);?>
-                                    </tr>
-                                <?php
+                                <?php $_smarty_tpl->assign('total', $_smarty_tpl->getValue('total')+$_smarty_tpl->getValue('sale')->getPrice(), false, NULL);?>
+                            </tr>
+                        <?php
 }
-$_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?> 
-                                </tbody>
-                        </table> 
-
-                    </div>
-                    </div>
-                </div>
-
-      </div>
+$_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
+</div>
+</div>
 
    
 
