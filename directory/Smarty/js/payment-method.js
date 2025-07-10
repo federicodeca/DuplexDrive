@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const manualInputs = ['cc-name', 'cc-number', 'cc-expiration', 'cc-cvv'];
 
   // Disabilita il form di sinistra se non ci sono carte salvate
-  if (!methodSelect || methodSelect.options.length < 1) {
-    if (methodSelect) methodSelect.disabled = true;
-    if (submitBtnLeft) submitBtnLeft.disabled = true;
+  if (!methodSelect ) {
+     methodSelect.disabled = true;
+     submitBtnLeft.disabled = true;
   }
 
   function toggleManualFields() {
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const hasSavedCard = methodSelect && methodSelect.options.length > 0;
   const isFormSinistroAttivo = document.activeElement === submitBtnLeft;
 
-  const shouldDisable = usingCard && hasSavedCard && isFormSinistroAttivo;
+  const shouldDisable = usingCard && hasSavedCard && isFormSinistroAttivo; 
 
   manualInputs.forEach(id => {
     const input = document.getElementById(id);
