@@ -77,9 +77,9 @@
                     </a>
                 </li> 
 
-              <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/carSearcher/">Acquista</a></li>
+              <li class="nav-item"><a class="nav-link" href="/DuplexDrive/Sale/carSearcher/">Acquista</a></li>
 
-              <li class="nav-item"><a class="nav-link active" href="/DuplexDrive/User/showCarsForRent/">Noleggia</a></li>
+              <li class="nav-item"><a class="nav-link active" href="/DuplexDrive/Rent/showCarsForRent/">Noleggia</a></li>
 
                 
 
@@ -161,7 +161,7 @@
           <div class="col-md-8">
             <div class="contact-form">
               
-              <form id="contact-form" action="/DuplexDrive/User/loginAndCreditRequirement" method="post">
+              <form id="contact-form" action="/DuplexDrive/Rent/loginAndCreditRequirement" method="post">
                 <input type="hidden" id="idAuto" name="idAuto" value="{$car->getIdAuto()}">
 
                 <i class="fa-solid fa-calendar-days mr-2"></i>
@@ -184,7 +184,7 @@
                     <fieldset>
                     {if $permission=='admin'|| $permission=='owner'}
                       {else}
-                      <button type="submit" id="form-submit"  class="filled-button">Submit</button>
+                      <button type="submit" id="form-submit"  class="filled-button">Noleggia</button>
                       {/if}
                     </fieldset>
                   </div>

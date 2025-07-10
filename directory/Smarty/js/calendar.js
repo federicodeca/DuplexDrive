@@ -82,7 +82,7 @@ $(document).ready(function() { // Assicurati che il DOM sia pronto prima di eseg
     }
   });
 
-  // Inizializza i campi hidden al caricamento
+  // inizializza i campi hidden con inizio e fine di questo mese
   var picker = $('#date-range').data('daterangepicker');
   if (picker) {
     $('#startDate').val(picker.startDate.format('YYYY-MM-DD'));
@@ -91,9 +91,9 @@ $(document).ready(function() { // Assicurati che il DOM sia pronto prima di eseg
 
   function totalPrice(start, end) {
     let dates = [];
-    let currentDate = start.clone();
+    let currentDate = start.clone(); // Clona la data di inizio per non modificarla direttamente
 
-    while (currentDate.isSameOrBefore(end)) {
+    while (currentDate.isSameOrBefore(end)) { //crea un array di date tra start e end
       dates.push(currentDate.clone());  
       currentDate.add(1, 'days');       
     }

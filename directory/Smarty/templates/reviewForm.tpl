@@ -53,9 +53,9 @@
                     </a>
                 </li> 
 
-                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/carSearcher/">Acquista</a></li>
+                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/Sale/carSearcher/">Acquista</a></li>
 
-                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showCarsForRent/">Noleggia</a></li>
+                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/Rent/showCarsForRent/">Noleggia</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showAboutUs/">About Us</a></li>
                 
@@ -70,7 +70,7 @@
                       {if $permission === 'user'} 
                         <a class="dropdown-item" href="/DuplexDrive/User/insertLicense">Patente</a>
                         <a class="dropdown-item" href="/DuplexDrive/User/insertReview">Recensione</a>
-                        <a class="dropdown-item" href="/DuplexDrive/User/ordersHistory">Ordini</a>vv                        
+                        <a class="dropdown-item" href="/DuplexDrive/User/ordersHistory">Ordini</a>                       
                         <a class="dropdown-item" href="/DuplexDrive/User/showProfile">Profilo</a>
                       {/if}
                       <a class="dropdown-item" href="/DuplexDrive/User/logout">Esci</a>

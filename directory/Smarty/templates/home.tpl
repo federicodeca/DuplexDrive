@@ -60,12 +60,12 @@
               <li id="user-box" class="nav-item d-flex align-items-center"></li>
 
               <li class="nav-item active">
-                <a class="nav-link" href="/User/home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/DuplexDrive/User/home">Home <span class="sr-only">(current)</span></a>
               </li>
 
-              <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/carSearcher/">Acquista</a></li>
+              <li class="nav-item"><a class="nav-link" href="/DuplexDrive/Sale/carSearcher/">Acquista</a></li>
 
-              <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showCarsForRent/">Noleggia</a></li>
+              <li class="nav-item"><a class="nav-link" href="/DuplexDrive/Rent/showCarsForRent/">Noleggia</a></li>
 
 
               <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showAboutUs/">About Us</a></li>
@@ -155,14 +155,14 @@
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Occasioni</h2>
-              <a href="/DuplexDrive/User/carSearcher">scopri di più <i class="fa fa-angle-right"></i></a>
+              <a href="/DuplexDrive/Sale/carSearcher">scopri di più <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
 
           {if $offers|@count > 2}
    
             <div class="col-md-4">
-                <a href='/DuplexDrive/User/selectCarForSale/{$offers[0]->getIdAuto()}'>
+                <a href='/DuplexDrive/Sale/selectCarForSale/{$offers[0]->getIdAuto()}'>
                   <div class="product-item">
                     {if $offers[0]->getIcon()}
                       <img class="product-item-icon" src="data:{$offers[0]->getIcon()->getType()};base64,{$offers[0]->getIcon()->getEncodedData()}" loading="lazy" alt="Img">
@@ -180,7 +180,7 @@
               </div>
 
             <div class="col-md-4">
-                <a href='/DuplexDrive/User/selectCarForSale/{$offers[1]->getIdAuto()}'>
+                <a href='/DuplexDrive/Sale/selectCarForSale/{$offers[1]->getIdAuto()}'>
                   <div class="product-item">
                     {if $offers[1]->getIcon()}
                       <img class="product-item-icon" src="data:{$offers[1]->getIcon()->getType()};base64,{$offers[1]->getIcon()->getEncodedData()}" loading="lazy" alt="Img">
@@ -198,7 +198,7 @@
               </div>
 
            <div class="col-md-4">
-                <a href='/DuplexDrive/User/selectCarForSale/{$offers[2]->getIdAuto()}'>
+                <a href='/DuplexDrive/Sale/selectCarForSale/{$offers[2]->getIdAuto()}'>
                   <div class="product-item">
                     {if $offers[2]->getIcon()}
                       <img class="product-item-icon" src="data:{$offers[2]->getIcon()->getType()};base64,{$offers[2]->getIcon()->getEncodedData()}" loading="lazy" alt="Img">

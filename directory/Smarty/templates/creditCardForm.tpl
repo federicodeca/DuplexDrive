@@ -58,9 +58,9 @@
                     </a>
                 </li> 
 
-                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/carSearcher/">Acquista</a></li>
+                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/Sale/carSearcher/">Acquista</a></li>
 
-                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showCarsForRent/">Noleggia</a></li>
+                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/Rent/showCarsForRent/">Noleggia</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showAboutUs/">About Us</a></li>
                 
@@ -140,14 +140,14 @@
             <h5 style="color:white"> le tue carte </h5>
           </div>
 
-            <form class="needs-validation"  method="post" action="/DuplexDrive/User/showOverview">
+            <form class="needs-validation"  method="post" action="/DuplexDrive/Rent/showOverview">
                   
             <div class="card-body">        
               <div class="form-group ">
                 <label style="color:white" for="card-select">Seleziona una carta salvata (opzionale)</label>
                   <select class="form-control" name="cardNumber" id="card-select" onchange="toggleManualFields(this)"
                     {if !$cards || $cards|count == 0}disabled{/if}>
-                    <option value="">-- <p style="color:white">Seleziona una carta</p> --</option>
+                   
                       {foreach from=$cards item=card}
                         <option value="{$card}">
                           Carta: **** **** **** {$card|substr:-4}
@@ -168,20 +168,20 @@
           <div class="col-md-6 ">
            <div class="custom-license-card">
               <h5  style="color:white" class="card-header">Pagamento</h5>
-                <form class="needs-validation"  method="post" action="/DuplexDrive/User/showOverview">
+                <form class="needs-validation"  method="post" action="/DuplexDrive/Rent/showOverview">
                   
             <div class="card-body ">
             <div class="d-block  pl-0 pr-0">
               <div class="custom-control custom-radio" >
-                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="">
                 <label class="custom-control-label" for="credit"  style="color:white" >Credit card</label>
               </div>
               <div class="custom-control custom-radio">
-                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" >
                 <label class="custom-control-label" for="debit"  style="color:white" >Debit card</label>
               </div>
               <div class="custom-control custom-radio">
-                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" >
                 <label class="custom-control-label" for="paypal"  style="color:white" >Paypal</label>
               </div>
             </div>
@@ -197,7 +197,8 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label for="cc-number" style="margin-top: 10px">Credit card number</label>
-                <input type="text" class="form-control" id="cc-number" name="cardNumber" placeholder="" pattern="[0-9]&#123;13,16&#125;">
+                <input type="text" class="form-control" id="cc-number" name="cardNumber" required placeholder="" pattern="[0-9]&#123;13,16&#125;">
+                <small class="text-muted">Credit card number</small>
                 <div class="invalid-feedback">
                 Credit card number is required
                 </div>

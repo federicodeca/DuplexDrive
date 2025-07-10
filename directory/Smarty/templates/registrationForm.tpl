@@ -55,9 +55,9 @@
                     </a>
                 </li> 
 
-                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/carSearcher/">Acquista</a></li>
+                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/Sale/carSearcher/">Acquista</a></li>
 
-                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showCarsForRent/">Noleggia</a></li>
+                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/Rent/showCarsForRent/">Noleggia</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showAboutUs/">About Us</a></li>
                 
@@ -107,7 +107,7 @@
             
             <div class="col-md-6" style="margin-top: 20px;">
               <label for="inputPassword4" class="form-label" style="color:aliceblue">Password</label>
-              <input type="password" class="form-control" id="inputPassword4" name="password" required ="">
+              <input type="password" class="form-control" id="inputPassword4" name="password" required =""{literal} pattern='(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).&#123;8,&#125;'{/literal}  title="La password deve contenere almeno 8 caratteri, una lettera maiuscola, una minuscola e un numero.">
             </div>
           </div>  
 

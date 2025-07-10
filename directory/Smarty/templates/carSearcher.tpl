@@ -62,9 +62,9 @@
                     </a>
                 </li> 
     
-              <li class="nav-item"><a class="nav-link active" href="/DuplexDrive/User/carSearcher/">Acquista</a></li>
+              <li class="nav-item"><a class="nav-link active" href="/DuplexDrive/Sale/carSearcher/">Acquista</a></li>
 
-              <li class="nav-item"><a class="nav-link " href="/DuplexDrive/User/showCarsForRent/">Noleggia</a></li>
+              <li class="nav-item"><a class="nav-link " href="/DuplexDrive/Rent/showCarsForRent/">Noleggia</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showAboutUs/">About Us</a></li>
                 
@@ -126,7 +126,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="custom-license-card">
-              <form method="post" action="/DuplexDrive/User/showCarsForSale/1" >
+              <form method="post" action="/DuplexDrive/Sale/showCarsForSale/1" >
                 <div class="card-header">
                   <h4 class=" mb-3" style="color:white">Che auto cerchi?</h4>
                 </div>

@@ -56,9 +56,9 @@
                     </a>
                 </li> 
 
-                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/carSearcher/">Acquista</a></li>
+                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/Sale/carSearcher/">Acquista</a></li>
 
-                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showCarsForRent/">Noleggia</a></li>
+                <li class="nav-item"><a class="nav-link" href="/DuplexDrive/Rent/showCarsForRent/">Noleggia</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showAboutUs/">About Us</a></li>
                 
@@ -191,7 +191,7 @@
                       </ul>
                         
                       <hr class="mb-4">
-                      <a href="/DuplexDrive/User/confirmRent" class="btn btn-primary btn-lg btn-block">Acquista</a>
+                      <a href="/DuplexDrive/Rent/confirmRent" class="btn btn-primary btn-lg btn-block">Acquista</a>
                      
                     </div>
                 </div>

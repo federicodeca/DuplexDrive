@@ -62,9 +62,9 @@
                     </a>
                 </li> 
     
-              <li class="nav-item"><a class="nav-link active" href="/DuplexDrive/User/carSearcher/">Acquista</a></li>
+              <li class="nav-item"><a class="nav-link active" href="/DuplexDrive/Sale/carSearcher/">Acquista</a></li>
 
-              <li class="nav-item "><a class="nav-link " href="/DuplexDrive/User/showCarsForRent/">Noleggia</a></li>
+              <li class="nav-item "><a class="nav-link " href="/DuplexDrive/Rent/showCarsForRent/">Noleggia</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showAboutUs/">About Us</a></li>
                 
@@ -126,7 +126,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="custom-license-card">
-              <form method="post" action="/DuplexDrive/User/showCarsForSale/1" >
+              <form method="post" action="/DuplexDrive/Sale/showCarsForSale/1" >
                 <div class="card-header">
                   <h4 class=" mb-3" style="color:white">Che auto cerchi?</h4>
                 </div>
@@ -203,7 +203,7 @@
       {/if}
 
       <div class="col-md-4">
-        <a href='/DuplexDrive/User/selectCarForSale/{$car->getIdAuto()}'>
+        <a href='/DuplexDrive/Sale/selectCarForSale/{$car->getIdAuto()}'>
           <div class="product-item">
             {if $car->getIcon()}
               <img class="product-item-icon" src="data:{$car->getIcon()->getType()};base64,{$car->getIcon()->getEncodedData()}" loading="lazy" alt="Img">
@@ -243,7 +243,7 @@
               {* Previous Page *}
               {if $currentPage > 1} 
                 <li class="page-item"> 
-                  <a class="page-link" href="/DuplexDrive/User/showCarsForSale/{$currentPage - 1}">Previous</a>
+                  <a class="page-link" href="/DuplexDrive/Sale/showCarsForSale/{$currentPage - 1}">Previous</a>
                 </li>
               {else}
                 <li class="page-item disabled">
@@ -257,24 +257,24 @@
 
               {if $prevPage >= 1}
                 <li class="page-item">
-                  <a class="page-link" href="/DuplexDrive/User/showCarsForSale/{$prevPage}">{$prevPage}</a>
+                  <a class="page-link" href="/DuplexDrive/Sale/showCarsForSale/{$prevPage}">{$prevPage}</a>
                 </li>
               {/if}
 
               <li class="page-item active " aria-current="page">
-                <a class="page-link" href="/DuplexDrive/User/showCarsForSale/{$currentPage}">{$currentPage}</a>
+                <a class="page-link" href="/DuplexDrive/Sale/showCarsForSale/{$currentPage}">{$currentPage}</a>
               </li>
 
               {if $nextPage <= $totalPages}
                 <li class="page-item">
-                  <a class="page-link" href="/DuplexDrive/User/showCarsForSale/{$nextPage}">{$nextPage}</a>
+                  <a class="page-link" href="/DuplexDrive/Sale/showCarsForSale/{$nextPage}">{$nextPage}</a>
                 </li>
               {/if}
 
               {* Next Page *}
               {if $currentPage < $totalPages}
                 <li class="page-item">
-                  <a class="page-link" href="/DuplexDrive/User/showCarsForSale/{$currentPage + 1}">Next</a>
+                  <a class="page-link" href="/DuplexDrive/Sale/showCarsForSale/{$currentPage + 1}">Next</a>
                 </li>
               {else}
                 <li class="page-item disabled">

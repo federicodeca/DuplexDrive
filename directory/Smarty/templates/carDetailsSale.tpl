@@ -77,9 +77,9 @@
                     </a>
                 </li> 
 
-              <li class="nav-item"><a class="nav-link active" href="/DuplexDrive/User/carSearcher/">Acquista</a></li>
+              <li class="nav-item"><a class="nav-link active" href="/DuplexDrive/Sale/carSearcher/">Acquista</a></li>
 
-              <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showCarsForRent/">Noleggia</a></li>
+              <li class="nav-item"><a class="nav-link" href="/DuplexDrive/Rent/showCarsForRent/">Noleggia</a></li>
 
 
                 <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showAboutUs/">About Us</a></li>
@@ -159,7 +159,7 @@
           <div class="col-md-8">
             <div class="contact-form">
               
-              <form action="/DuplexDrive/User/loginAndCreditRequirementSale/" method="post">
+              <form action="/DuplexDrive/Sale/loginAndCreditRequirementSale/" method="post">
               
 
                 <div class="col-lg-12">
@@ -177,7 +177,7 @@
                     <fieldset>
                       {if $permission=='admin'|| $permission=='owner'}
                       {else}
-                      <button type="submit" id="form-submit"  class="filled-button">Submit</button>
+                      <button type="submit" id="form-submit"  class="filled-button">Acquista</button>
                       {/if}
                     </fieldset>
 

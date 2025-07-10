@@ -62,9 +62,9 @@
                     </a>
                 </li> 
     
-              <li class="nav-item"><a class="nav-link " href="/DuplexDrive/User/carSearcher/">Acquista</a></li>
+              <li class="nav-item"><a class="nav-link " href="/DuplexDrive/Sale/carSearcher/">Acquista</a></li>
 
-              <li class="nav-item"><a class="nav-link " href="/DuplexDrive/User/showCarsForRent/">Noleggia</a></li>
+              <li class="nav-item"><a class="nav-link " href="/DuplexDrive/Rent/showCarsForRent/">Noleggia</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showAboutUs/">About Us</a></li>
                 
@@ -134,6 +134,7 @@
             </h2>
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover" style="width: 100%;">
+                 {if count($orders)>0}
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">NUM. ORDINE</th>
@@ -145,7 +146,9 @@
                     </thead>
                     <tbody>
                         <!--- Lista auto acquistate -->
+
                         {assign var="total" value=0}
+                      
                         {foreach from=$orders item=sale}
                             <tr>
                                 <td>{$sale->getOrderId()}</td>
@@ -156,6 +159,10 @@
                                 {assign var="total" value=$total + $sale->getPrice()}
                             </tr>
                         {/foreach}
+                        {else}
+                         <tbody>
+                        <tr><h7 style="color:white"> non ci sono acquisti</h7></tr>
+                         {/if}
                     </tbody>
                 </table>
             </div>
@@ -171,6 +178,7 @@
             </h2>
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover" style="width: 100%;">
+                 {if count($rents)>0}
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">NUM. ORDINE</th>
@@ -182,8 +190,10 @@
                         </tr>
                     </thead>
                     <tbody>
+                      
                         <!--- Lista auto noleggiate -->
                         {assign var="total" value=0}
+                 
                         {foreach from=$rents item=rent}
                             <tr>
                                 <td>{$rent->getOrderId()}</td>
@@ -192,9 +202,13 @@
                                 <td>{$rent->getIdUnavailability()->getStart()->format("d/m/Y")}</td>
                                 <td>{$rent->getIdUnavailability()->getEnd()->format("d/m/Y")}</td>
                                 <td>{$rent->getTotalPrice()}</td>
-                                {assign var="total" value=$total + $sale->getPrice()}
+                                {assign var="total" value=$total + $rent->getTotalPrice()}
                             </tr>
                         {/foreach}
+                        {else}
+                         <tbody>
+                        <tr><h7 style="color:white"> non ci sono noleggi</h7></tr>
+                         {/if}
                     </tbody>
                 </table>
             </div>

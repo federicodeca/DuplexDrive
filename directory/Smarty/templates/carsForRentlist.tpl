@@ -60,9 +60,9 @@
                     </a>
                 </li> 
 
-              <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/carSearcher/">Acquista</a></li>
+              <li class="nav-item"><a class="nav-link" href="/DuplexDrive/Sale/carSearcher/">Acquista</a></li>
 
-              <li class="nav-item"><a class="nav-link active" href="/DuplexDrive/User/showCarsForRent/">Noleggia</a></li>
+              <li class="nav-item"><a class="nav-link active" href="/DuplexDrive/Rent/showCarsForRent/">Noleggia</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="/DuplexDrive/User/showAboutUs/">About Us</a></li>
                 
@@ -157,7 +157,7 @@
 
 
     <div class="col-md-4"> <!--row in 12,every column start on 4 from 12-->
-    <a href='/DuplexDrive/User/selectCarForRent/{$car->getIdAuto()}'>
+    <a href='/DuplexDrive/Rent/selectCarForRent/{$car->getIdAuto()}'>
       <div class="product-item" >
         {if $car->getIcon() && $car->getIcon()->getEncodedData()}
        <img class="product-item-icon" src="data:{$car->getIcon()->getType()};base64,{$car->getIcon()->getEncodedData()}" loading="lazy" alt="Img">

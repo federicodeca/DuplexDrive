@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const barData = {
 datasets: [{
-    label: 'Prezzo Vendita',
+    label: 'Numero di recensioni',
     data: dataPoints,
     backgroundColor: 'rgba(54, 162, 235, 0.7)'
 }]
