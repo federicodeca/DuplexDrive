@@ -11,6 +11,8 @@
      */
     public static function showCarsForRent() {
 
+
+
         $infout=CUser::getUserStatus();
 
         $cars=[];
@@ -24,6 +26,11 @@
      * this method is used to select a cars for rent, it will redirect to the cars details page
      */
     public static function selectCarForRent($idAuto) {
+
+        if (session_status() === PHP_SESSION_NONE) {
+            USession::getInstance();
+        }
+
 
         $infout=CUser::getUserStatus();
         USession::setElementInSession('type', 'Rent'); 

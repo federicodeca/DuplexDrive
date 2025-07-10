@@ -251,6 +251,9 @@ class CUser {
 
     public static function insertLicense(){
 
+        if (CUser::isLogged()) {
+         
+            
 
 
         $infout=CUser::getUserStatus();
@@ -262,10 +265,13 @@ class CUser {
         // Check if the user is already verified
         $view =new VUser();
         $view->showLicenseForm($infout,$licenseInserted); // Show the license form if not verified or if the user has not inserted a license yet
-
+        }
     }
 
     public static function uploadLicense() {
+
+        if (CUuser::isLogged()) {
+ 
 
 
         $infout=CUser::getUserStatus();
@@ -289,6 +295,7 @@ class CUser {
 
         $view = new VUser();
         $view->showLicenseConfirm(); // Show success message after uploading the license
+        }
     }
 
     /**
@@ -296,28 +303,30 @@ class CUser {
      */
     public static function DocVerified(): bool {
 
-        $idUser = USession::getElementFromSession('user');
-        $user = FPersistentManager::getInstance()->getObjectById(EUser::class, $idUser);
-        $license = FPersistentManager::getInstance()->getObjectByField(ELicense::class, 'user_id', $idUser);
+        if (CUser::isLogged()){
+            $idUser = USession::getElementFromSession('user');
+            $user = FPersistentManager::getInstance()->getObjectById(EUser::class, $idUser);
+            $license = FPersistentManager::getInstance()->getObjectByField(ELicense::class, 'user_id', $idUser);
 
-        if ($license === null || $user === null) {
-            return false;
-        }
+            if ($license === null || $user === null) {
+                return false;
+            }
 
-        if (!$license->checkExpiration()) {
-            $user->setVerified(false);
-            FPersistentManager::getInstance()->uploadObj($user);
-            // Patente scaduta: eliminiamola e resettiamo lo stato dell’utente
-            FPersistentManager::getInstance()->removeObject($license);
-            
-            return false;
-        }
-        if($license->getChecked() == false) {
-            // License is not checked yet, so we return false
-            return false;
-        }
+            if (!$license->checkExpiration()) {
+                $user->setVerified(false);
+                FPersistentManager::getInstance()->uploadObj($user);
+                // Patente scaduta: eliminiamola e resettiamo lo stato dell’utente
+                FPersistentManager::getInstance()->removeObject($license);
+                
+                return false;
+            }
+            if($license->getChecked() == false) {
+                // License is not checked yet, so we return false
+                return false;
+            }
 
-        return $user->getIsVerified();
+            return $user->getIsVerified();
+        }
     }
 
 
@@ -332,6 +341,7 @@ class CUser {
     //=================================
 
     public static function showProfile() {
+        if (CUser::isLogged()) {
 
         $infout=CUser::getUserStatus();
         $idUser = USession::getElementFromSession('user');
@@ -340,6 +350,7 @@ class CUser {
 
         $view = new VUser();
         $view->showUserProfile($user,$license,$infout);
+        }
     }
 
 
@@ -409,25 +420,29 @@ class CUser {
     //=================================
 
     public static function insertReview(){
+        if (CUser::isLogged()) {
 
-        $infout=CUser::getUserStatus();
-        if(CUser::isLogged()){
-        $idUser = USession::getElementFromSession('user');  
-        $user = FPersistentManager::getInstance()->getObjectById(EUser::class, $idUser);
-        if (FPersistentManager::getInstance()->verifyReview($user)) {
-            $review = FPersistentManager::getInstance()->getObjectByField(EReview::class, 'user', $user);
-            $content = $review->getContent();
-            $rating = $review->getRating();
-        } else {
-            $content = '';
-            $rating = '';
+            $infout=CUser::getUserStatus();
+            if(CUser::isLogged()){
+            $idUser = USession::getElementFromSession('user');  
+            $user = FPersistentManager::getInstance()->getObjectById(EUser::class, $idUser);
+            if (FPersistentManager::getInstance()->verifyReview($user)) {
+                $review = FPersistentManager::getInstance()->getObjectByField(EReview::class, 'user', $user);
+                $content = $review->getContent();
+                $rating = $review->getRating();
+            } else {
+                $content = '';
+                $rating = '';
+            }
+            $view = new VUser();
+            $view->showReviewForm($infout, $rating, $content); // Show the review form with existing content and rating if available
+            
+            } 
         }
-        $view = new VUser();
-        $view->showReviewForm($infout, $rating, $content); // Show the review form with existing content and rating if available
-        } 
     }
 
     public static function updateReview(){
+
 
         if(CUser::isLogged()){
         $idUser = USession::getElementFromSession('user');  
