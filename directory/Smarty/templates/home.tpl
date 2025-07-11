@@ -225,6 +225,67 @@
       </div>
     </div>
 
+    {if isset($lastCar)}
+    <div class="mt-3"></div>
+
+    <div class="offers">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Continua ad acquistare</h2>
+              <a href="/DuplexDrive/Sale/carSearcher">scopri di più <i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+           
+          {if ($lastCar->getEntity()==ECarForSale)} 
+           <div class="col-md-4">
+                <a href='/DuplexDrive/Sale/selectCarForSale/{$lastCar->getIdAuto()}'>
+                  <div class="product-item">
+                    {if $lastCar->getIcon()}
+                      <img class="product-item-icon" src="data:{$lastCar->getIcon()->getType()};base64,{$lastCar->getIcon()->getEncodedData()}" loading="lazy" alt="Img">
+                    {else}
+                      <img src="/DuplexDrive/directory/Smarty/assets/images/default-car.jpg" loading="lazy" alt="Nessuna immagine disponibile">
+                    {/if}
+                    <div class="down-content">
+                      <h4><i class="fas fa-gas-pump mr-2"></i>{$lastCar->getBrand()} {$lastCar->getModel()}</h4>
+                      <h6><i class="fa-solid fa-money-check-dollar mr-2"></i> <small>from:</small> {$lastCar->getPrice()}€ <small>prezzo listino</small></h6>
+                      <h6><i class="fa-solid fa-hourglass-start mr-2"></i><small>condizione: </small> {$lastCar->getKm0OrNew()}</h6>
+                      <h6><i class="fa-solid fa-droplet mr-2"></i><small>alimentazione: </small>{$lastCar->getFuelType()} </h6>
+                    </div>    
+                  </div>
+                </a>
+              </div>
+          {else}
+            <a href='/DuplexDrive/Rent/selectCarForRent/{$lastCar->getIdAuto()}'>
+            <div class="product-item" >
+              {if $lastCar->getIcon() && $lastCar->getIcon()->getEncodedData()}
+            <img class="product-item-icon" src="data:{$lastCar->getIcon()->getType()};base64,{$lastCar->getIcon()->getEncodedData()}" loading="lazy" alt="Img">
+              {else}
+              <img class="product-item-icon" src="/DuplexDrive/directory/Smarty/assets/images/product-1-370x270.jpg" loading="lazy" alt="Img">
+              {/if}
+              <div class="down-content">
+                <h4>{$lastCar->getModel()}</h4>
+                <h6><small>from</small> {$lastCar->getBasePrice()}€ <small>per weekend </small></h6>
+                <p>{$lastCar->getDescription()}</p>
+              </div>
+              </a>
+            </div>
+          </div>
+
+          {/if}   
+
+           </div>
+      </div>
+    </div> 
+  {/if}   
+
+
+
+
+
+
+
     <div class="find-us">
       <div class="container">
         <div class="row">

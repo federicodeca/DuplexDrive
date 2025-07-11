@@ -33,9 +33,10 @@ class VUser{
     /**
      * login not required
      */
-    public function showHomePage($infout,$offers,$reviews) {
+    public function showHomePage($infout,$offers,$reviews,$lastCar) {
     $this->smarty->assign('offers', $offers); 
     $this->smarty->assign('reviews',$reviews );
+    $this->smarty->assign('lastCar', $lastCar);
     $this->smarty->assign('isLogged', $infout['isLogged']);  
     $this->smarty->assign('username', $infout['username']);
     $this->smarty->assign('permission', $infout['permission']);
