@@ -353,5 +353,22 @@ class FEntityManager {
    
     }
 
+    /**
+     * Execute a DQL query with a pessimistic write lock.
+     * This method is used to lock the table for writing to prevent concurrent modifications.
+     */
+    public static function doQueryLock($dql, array $params = []) {
+             try {
+            $entityManager = self::$entityManager;
+            $query = $entityManager->createQuery($dql)
+                ->setParameters($params)
+                ->setLockMode(\Doctrine\DBAL\LockMode::PESSIMISTIC_WRITE); // Lock the table for writing
 
+            return $query->getResult();
+        } catch (Exception $e) {
+            echo "ERROR: " . $e->getMessage();
+            return [];
+        }
+
+    }
 }

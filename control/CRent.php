@@ -173,6 +173,8 @@
           
 
             $car= FPersistentManager::getInstance()->getObjectByIdLock(ECarForRent::class, $idAuto); //get the car object by id and lock the tuples and start transaction 
+            FPersistentManager::getInstance()->lockAllIndispForCar($idAuto); // Lock all unavailability records for the car
+
              $indisp= new EUnavailability($start, $end, $car);
 
             if ($car->checkAvailability($start,$end)) { 

@@ -197,6 +197,7 @@ class CAdmin {
             $start = new DateTime(UHTTPMethods::post('start'));
             $end = new DateTime(UHTTPMethods::post('end'));
             $car= FPersistentManager::getInstance()->getObjectByIdLock(ECarForRent::class, $carId); 
+            FPersistentManager::getInstance()->lockAllIndispForCar($carId); // Lock all unavailability records for the car
             $indisp= new EUnavailability($start, $end, $car);
             if($car->checkAvailability($start, $end)) {
                 

@@ -78,6 +78,12 @@ class FPersistentManager {
         FEntityManager::getInstance()->deleteObj($obj);
     } 
 
+
+    public static function lockAllIndispForCar(int $carId) {
+        // This method locks all unavailability records for a specific car
+        FUnavailability::lockAllIndispForCar($carId);
+    }
+
     
     //////// OBJECTS RETRIEVAL 
 

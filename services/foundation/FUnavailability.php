@@ -15,4 +15,17 @@ class FUnavailability {
      
 
     }
+
+
+    public static function lockAllIndispForCar(int $carId) {
+        $dql = "SELECT u FROM EUnavailability u WHERE u.car = :carId";
+        
+        $params = [
+            'carId' => $carId
+        ];
+
+        $result = FEntityManager::getInstance()->doQueryLock($dql, $params);
+        return $result;
+    }
+
 }
