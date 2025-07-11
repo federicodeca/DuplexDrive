@@ -211,7 +211,7 @@
               <img src="/DuplexDrive/directory/Smarty/assets/images/default-car.jpg" loading="lazy" alt="Nessuna immagine disponibile">
             {/if}
             <div class="down-content">
-              <h4>{$car->getModel()}</h4>
+              <h4>{$car->getBrand()} {$car->getModel()}</h4>
               <h6><small>from:</small> {$car->getPrice()}€ <small>prezzo listino</small></h6>
               <br>
               <h6>condizione: {$car->getKm0OrNew()}</h6>

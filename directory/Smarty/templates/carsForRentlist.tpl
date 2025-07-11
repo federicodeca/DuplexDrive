@@ -165,8 +165,8 @@
         <img class="product-item-icon" src="/DuplexDrive/directory/Smarty/assets/images/product-1-370x270.jpg" loading="lazy" alt="Img">
         {/if}
         <div class="down-content">
-          <h4>{$car->getModel()}</h4>
-          <h6><small>from</small> {$car->getBasePrice()}€ <small>per weekend </small></h6>
+          <h4>{$car->getBrand()} {$car->getModel()}</h4>
+          <h6><small>from</small> {$car->getBasePrice()}€ <small>per day </small></h6>
           <p>{$car->getDescription()}</p>
         </div>
         </a>
