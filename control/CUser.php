@@ -99,7 +99,15 @@ class CUser {
         USession::getInstance();
         USession::unsetAllElementsInSession();// Unset all session elements
         USession::killSession();
-        setcookie('PHPSESSID','',time()-42000); //??
+        $params=session_get_cookie_params();
+        setcookie(       
+        'PHPSESSID',
+        '',               
+        time() - 42000,   
+        $params['path'],
+        $params['domain'],
+        $params['secure'],
+        $params['httponly']); 
         header('Location: /DuplexDrive/User/Home');
     }
 

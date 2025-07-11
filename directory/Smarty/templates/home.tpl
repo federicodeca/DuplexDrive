@@ -233,7 +233,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Continua ad acquistare</h2>
+              <h2>Stavi osservando:</h2>
              
             </div>
           </div>

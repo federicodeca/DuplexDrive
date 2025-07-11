@@ -145,6 +145,8 @@
             $endD=USession::getElementFromSession('endDate');
             $start=(new DateTime($startD))->format('l d F Y');
             $end=(new DateTime($endD))->format('l d F Y');
+            USession::unsetElementFromSession('type');
+            USession::unsetElementFromSession('idAuto'); 
 
                 // Store the credit card in the session
             FPersistentManager::getInstance()->uploadObj($card);

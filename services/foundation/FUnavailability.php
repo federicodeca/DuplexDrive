@@ -3,6 +3,7 @@
 class FUnavailability {
 
     public static function getAllValidUnavailabilities(int $carId) {
+        
         $dql = "SELECT u FROM EUnavailability u WHERE u.car = :carId AND u.start > CURRENT_DATE() ORDER BY u.start ASC";
         
         $params = [
@@ -18,6 +19,7 @@ class FUnavailability {
 
 
     public static function lockAllIndispForCar(int $carId) {
+
         $dql = "SELECT u FROM EUnavailability u WHERE u.car = :carId";
         
         $params = [

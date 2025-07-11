@@ -131,6 +131,9 @@ class CSale {
 
             $amount=USession::getElementFromSession('amount');
 
+            USession::unsetElementFromSession('type');
+            USession::unsetElementFromSession('idAuto'); 
+
 
                 // Store the credit card in the session
             FPersistentManager::getInstance()->uploadObj($card);
@@ -212,6 +215,8 @@ class CSale {
                 $cards=[]; // Array to store card numbers
                 foreach($cardList as $card) {
                     $cards[] = $card->getCardNumber();}
+
+            
 
 
                 $view = new VSale();
