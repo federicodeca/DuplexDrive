@@ -131,8 +131,6 @@ class CSale {
 
             $amount=USession::getElementFromSession('amount');
 
-            USession::unsetElementFromSession('type');
-            USession::unsetElementFromSession('idAuto'); 
 
 
                 // Store the credit card in the session
@@ -178,6 +176,10 @@ class CSale {
                  
                 FPersistentManager::getInstance()->unlock(); // commit ends the transaction and unlocks the table
                 UMail::sendSaleConfirm($user,$sale,$car,$amount);
+                
+                USession::unsetElementFromSession('type');
+                USession::unsetElementFromSession('idAuto'); 
+
                 $view = new VSale();
                 $view->showSaleConfirmation($sale,$infout); // Show confirmation of the car rent
             }

@@ -145,9 +145,7 @@
             $endD=USession::getElementFromSession('endDate');
             $start=(new DateTime($startD))->format('l d F Y');
             $end=(new DateTime($endD))->format('l d F Y');
-            USession::unsetElementFromSession('type');
-            USession::unsetElementFromSession('idAuto'); 
-
+            
                 // Store the credit card in the session
             FPersistentManager::getInstance()->uploadObj($card);
             USession::setElementInSession('creditCard', $card->getCardId()); // Persist the credit card
@@ -198,8 +196,13 @@
                 $rent->setTotalPrice($amount);
                 FPersistentManager::getInstance()->persistInTransaction($rent); // Save the rent object in transaction and locking
                 
-                UMail::sendRentConfirm($user,$rent,$car,$amount,$startD,$endD);
+               
                 FPersistentManager::getInstance()->unlock();
+                UMail::sendRentConfirm($user,$rent,$car,$amount,$startD,$endD);
+
+                USession::unsetElementFromSession('type');
+                USession::unsetElementFromSession('idAuto'); 
+
                  
                 $view = new VRent();
                 $view->showCarRentConfirmation($rent, $indisp,$infout); // Show confirmation of the car rent
