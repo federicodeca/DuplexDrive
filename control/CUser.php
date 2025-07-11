@@ -152,39 +152,44 @@ class CUser {
      * this method is used to get the user or admin or owner status, it will return an array with the  status, username and permission
      * different from th getOwnerStatus method,getAdminStatus this method is also used to get the permissions and to modifiy the home dashboard 
      */
-    public static function getUserStatus(): array {
+ public static function getUserStatus(): array {
+    $username = null;
+    $permission = null;
 
-    if (session_status() === PHP_SESSION_NONE) {
-        USession::getInstance();
-    }
+    if (UCookie::isSet('PHPSESSID')) {
+        if (session_status() === PHP_SESSION_NONE) {
+            USession::getInstance();
+        }
 
-    $isAdmin = USession::isSetSessionElement('admin');
-    $isUser = USession::isSetSessionElement('user');
-    $isOwner = USession::isSetSessionElement('owner'); // Check if the user is an owner
-    $isLogged = $isAdmin || $isUser|| $isOwner; // User is logged in if any of these session elements are set
+        $isAdmin = USession::isSetSessionElement('admin');
+        $isUser = USession::isSetSessionElement('user');
+        $isOwner = USession::isSetSessionElement('owner');
+        $isLogged = $isAdmin || $isUser || $isOwner;
 
-    if ($isAdmin) {
-        $username = USession::getElementFromSession('username');
-        $permission = 'admin';
-    } elseif ($isUser) {
-        $username = USession::getElementFromSession('username');
-        $permission = 'user';
+        if ($isAdmin) {
+            $username = USession::getElementFromSession('username');
+            $permission = 'admin';
+        } elseif ($isUser) {
+            $username = USession::getElementFromSession('username');
+            $permission = 'user';
+        } elseif ($isOwner) {
+            $username = USession::getElementFromSession('username');
+            $permission = 'owner';
+        }
 
-    } elseif ($isOwner) {
-        $username = USession::getElementFromSession('username');
-        $permission = 'owner'; // Set permission for owner  
-
+        return [
+            'isLogged' => $isLogged,
+            'username' => $username,
+            'permission' => $permission,
+        ];
     } else {
-        $username = null;
-        $permission = null;
+        return [
+            'isLogged' => false,
+            'username' => $username,
+            'permission' => $permission,
+        ];
     }
-
-    return [
-        'isLogged' => $isLogged,
-        'username' => $username,
-        'permission' => $permission,
-    ];
-    }
+}
 
 
 
