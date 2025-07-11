@@ -137,7 +137,7 @@
                       <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Brand</button>
                       <ul class="dropdown-menu">
                         {foreach $models as $brand => $modelList}
-                          <li><a class="dropdown-item" href="#" onclick="selectBrand('{$brand}')">{$brand}</a></li>
+                          <li><a class="dropdown-item"  onclick="selectBrand('{$brand}')">{$brand}</a></li>
                         {/foreach}
                       </ul>
                       <div style="width: 50%;">
@@ -152,7 +152,7 @@
                         {foreach $models as $brand => $modelList}
                           {foreach $modelList as $model}
                             <li class="dropdown-model-item" data-brand="{$brand}">
-                              <a class="dropdown-item" href="#" onclick="selectModel('{$model}')">{$model}</a>
+                              <a class="dropdown-item"  onclick="selectModel('{$model}')">{$model}</a>
                             </li>
                           {/foreach}
                         {/foreach}
