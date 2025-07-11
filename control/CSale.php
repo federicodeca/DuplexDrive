@@ -83,6 +83,10 @@ class CSale {
     public static function selectCarForSale($idAuto) {
 
         $infout=CUser::getUserStatus();
+        
+        if (session_status() === PHP_SESSION_NONE) {
+            USession::getInstance();
+        }
 
         USession::setElementInSession('type', 'Sale'); 
         USession::setElementInSession('idAuto', $idAuto); // Store the car ID in the session

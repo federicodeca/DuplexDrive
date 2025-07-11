@@ -232,8 +232,10 @@ class CUser {
     $offers=FPersistentManager::getInstance()->getOffers(); // Retrieve offers for the home page
     $reviews=FPersistentManager::getInstance()->retrieveAllReviews(); // Retrieve all reviews for the home page
 
-    if(session_status() === PHP_SESSION_ACTIVE && USession::isSetSessionElement('type')) { // Check if the session is active and the last viewed car ID is set
-        USession::getInstance(); // Ensure session is started
+    if(UCookie::isSet('PHPSESSID') && USession::isSetSessionElement('type')) { 
+        if (session_status() === PHP_SESSION_NONE) {
+            USession::getInstance();
+        }
         $idLast= USession::getElementFromSession('idAuto'); // Get the last viewed car from the session
     
         $type= USession::getElementFromSession('type'); // Get the type of car (Rent or Sale)
@@ -241,8 +243,8 @@ class CUser {
             $lastCar= FPersistentManager::getInstance()->getObjectbyId(ECarForSale::class, $idLast); // Retrieve the car for sale  
         } else if ($type == 'Rent') {
             $lastCar= FPersistentManager::getInstance()->getObjectbyId(ECarForRent::class, $idLast); // Retrieve the car for rent  
-        }
-    
+            }
+        
         
     }
     else {
@@ -287,7 +289,7 @@ class CUser {
 
     public static function uploadLicense() {
 
-        if (CUuser::isLogged()) {
+        if (CUser::isLogged()) {
  
 
 
@@ -318,7 +320,7 @@ class CUser {
     /**
      * this method is used to check if the document is verified, if not it will return false
      */
-    public static function DocVerified(): bool {
+    public static function DocVerified() {
 
         if (CUser::isLogged()){
             $idUser = USession::getElementFromSession('user');
