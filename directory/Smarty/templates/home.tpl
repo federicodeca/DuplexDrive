@@ -234,7 +234,7 @@
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Continua ad acquistare</h2>
-              <a href="/DuplexDrive/Sale/carSearcher">scopri di più <i class="fa fa-angle-right"></i></a>
+             
             </div>
           </div>
            
