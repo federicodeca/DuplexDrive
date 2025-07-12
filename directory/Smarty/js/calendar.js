@@ -2,11 +2,12 @@
 
 
 $(document).ready(function() { // Assicurati che il DOM sia pronto prima di eseguire il codice
-
+  const today = moment().startOf('day'); // Inizializza la data di oggi
+  $('#totalPriceDisplay').text(totalPrice( today, today)); 
 
   $('#date-range').daterangepicker({   // Inizializza il date range picker
     locale: { format: 'YYYY-MM-DD' },
-    minDate: moment().startOf('day'),
+    minDate: today.format('YYYY-MM-DD'), // Imposta la data minima a oggi
     
     
     
@@ -24,8 +25,8 @@ $(document).ready(function() { // Assicurati che il DOM sia pronto prima di eseg
 
     
 
-    startDate: moment().startOf('day'),
-    endDate: moment().startOf('day'),
+    startDate:today,
+    endDate: today,
     
     
 
@@ -54,10 +55,12 @@ $(document).ready(function() { // Assicurati che il DOM sia pronto prima di eseg
 
       } 
     return '';
-    },
+    }
+
+ 
 
       
-  }, function(start, end) { //le callback vengono lanciate
+  } , function(start, end) { //le callback vengono lanciate
     totalPrice(start,end);  // Callback dopo selezione range controllo se date start e end si sovrappongono con le date non disponibili
     let isInvalidRange = false;
     let i= 0;
@@ -74,12 +77,13 @@ $(document).ready(function() { // Assicurati che il DOM sia pronto prima di eseg
     if (isInvalidRange) {
       alert("Il periodo selezionato include date non disponibili. Scegli un intervallo diverso.");
 
-      picker.setStartDate(moment().moment().startOf('day')); // Resetta il date range picker al mese corrente
-      picker.setEndDate(moment().moment().startOf('day')); // Resetta il date range picker
+      picker.setStartDate(today); // Resetta il date range picker al mese corrente
+      picker.setEndDate(today); // Resetta il date range picker
       // Resetta i valori e svuota input
       $('#date-range').val('');
       $('#startDate').val('');
       $('#endDate').val('');
+      totalPrice(today, today);
     } else {
       // Se valido, aggiorna i campi hidden
       $('#startDate').val(start.format('YYYY-MM-DD'));
@@ -92,6 +96,8 @@ $(document).ready(function() { // Assicurati che il DOM sia pronto prima di eseg
   if (picker) {
     $('#startDate').val(picker.startDate.format('YYYY-MM-DD'));
     $('#endDate').val(picker.endDate.format('YYYY-MM-DD'));
+    
+    
   }
 
   function totalPrice(start, end) {
