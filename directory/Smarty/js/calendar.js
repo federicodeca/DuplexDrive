@@ -24,8 +24,10 @@ $(document).ready(function() { // Assicurati che il DOM sia pronto prima di eseg
 
     
 
-    startDate: moment().startOf('month'),
-    endDate: moment().endOf('month'),
+    startDate: moment().startOf('day'),
+    endDate: moment().startOf('day'),
+    
+    
 
     isCustomDate: function(date) {
       
@@ -71,6 +73,9 @@ $(document).ready(function() { // Assicurati che il DOM sia pronto prima di eseg
 
     if (isInvalidRange) {
       alert("Il periodo selezionato include date non disponibili. Scegli un intervallo diverso.");
+
+      picker.setStartDate(moment().moment().startOf('day')); // Resetta il date range picker al mese corrente
+      picker.setEndDate(moment().moment().startOf('day')); // Resetta il date range picker
       // Resetta i valori e svuota input
       $('#date-range').val('');
       $('#startDate').val('');

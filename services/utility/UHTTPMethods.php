@@ -32,7 +32,6 @@ class UHTTPMethods{
     }
 
     public static function multipleFiles($param) {
-        //Se è una sola immagine
 
         // Se sono più immagini
         $files = [];
