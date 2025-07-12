@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => { // Ensure the DOM is fully
     return;
   }
 
-  if (startDate >= endDate) {
+  if (startDate > endDate) {
     resetAndAlert(); // data di inizio dopo o uguale a data di fine
   }
 }
