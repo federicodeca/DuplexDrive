@@ -6,15 +6,8 @@ class USession {
 
     private function __construct() {
 
-     session_set_cookie_params([
-    'lifetime' => COOKIE_EXP,
-    'path' => '/',
-    'domain' => '',         // vuoto in locale
-    'secure' => false,      // true in produzione con HTTPS
-    'httponly' => true,
-    'samesite' => 'Lax'     //  evita che il browser blocchi il cookie quando uso il islogged
-]);
-session_start();
+
+        session_start();
     }
 
     /**
