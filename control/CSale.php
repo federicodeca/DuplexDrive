@@ -127,6 +127,7 @@ class CSale {
                 $card=FPersistentManager::getInstance()->retrieveObjectByfield(ECreditCard::class,'cardNumber',$cardNumber);
             }
             $idAuto=USession::getElementFromSession('idAuto');
+
             $car=FPersistentManager::getInstance()->getObjectbyId(ECarForSale::class, $idAuto);
 
             $amount=USession::getElementFromSession('amount');
@@ -153,6 +154,10 @@ class CSale {
 
 
             $idAuto=USession::getElementFromSession('idAuto');
+            if($idAuto==null) {
+                header('Location: /DuplexDrive/User/home');
+                exit;
+            }
             $car= FPersistentManager::getInstance()->getObjectByIdlock(ECarForSale::class, $idAuto);
             
 

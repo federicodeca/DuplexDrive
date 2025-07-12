@@ -395,6 +395,7 @@ class CAdmin {
             if ($user) {
                 $user->setVerified(false);
             }
+            FPersistentManager::getInstance()->uploadObj($user); // Save changes to user
             FPersistentManager::getInstance()->removeObject($license);
 
             header('Location: /DuplexDrive/Admin/showLicenseNotChecked');

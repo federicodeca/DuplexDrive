@@ -169,6 +169,11 @@
             $end=new DateTime($endD);
 
             $idAuto=USession::getElementFromSession('idAuto');
+            if($idAuto==null) {
+                header('Location: /DuplexDrive/User/home');
+                exit;
+            }
+            
            
           
 
