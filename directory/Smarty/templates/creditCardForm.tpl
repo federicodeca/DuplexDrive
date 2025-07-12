@@ -188,7 +188,7 @@
             <div id="credit-fields">
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="cc-name" style="margin-top: 10px">Name on card</label>
+                <label for="cc-name" style="margin-top: 10px; color:white" >Name on card</label>
                 <input type="text" class="form-control" id="cc-name" placeholder="" required="" name="cardName">
                 <small class="text-muted">Full name as displayed on card</small>
                 <div class="invalid-feedback">
@@ -196,7 +196,7 @@
                 </div>
               </div>
               <div class="col-md-6 mb-3">
-                <label for="cc-number" style="margin-top: 10px">Credit card number</label>
+                <label for="cc-number" style="margin-top: 10px; color:white" >Credit card number</label>
                 <input type="text" class="form-control" id="cc-number" name="cardNumber" required placeholder="" pattern="[0-9]&#123;13,16&#125;">
                 <small class="text-muted">Credit card number</small>
                 <div class="invalid-feedback">
@@ -213,7 +213,7 @@
                 </div>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="cc-expiration">CVV</label>
+                <label for="cc-expiration"  style="color:white" >CVV</label>
                 <input type="text" class="form-control" id="cc-cvv" name="cardCVV" placeholder="123" required="" pattern="[0-9]&#123;3,4&#125;" >
                 <div class="invalid-feedback">
                   Security code required
