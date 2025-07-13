@@ -346,9 +346,12 @@ class CUser {
 
             if (!$license->checkExpiration()) {
                 $user->setVerified(false);
-                FPersistentManager::getInstance()->uploadObj($user);
+                FPersistentManager::getInstance()->beginTransaction();
                 // Patente scaduta: eliminiamola e resettiamo lo stato dell’utente
-                FPersistentManager::getInstance()->removeObject($license);
+                FPersistentManager::getInstance()->persistInTransaction($user);      
+                FPersistentManager::getInstance()->removeInTransaction($license);
+                
+                FPersistentManager::getInstance()->unlock(); // Commit the transaction
                 
                 return false;
             }

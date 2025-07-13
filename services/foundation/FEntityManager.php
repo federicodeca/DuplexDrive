@@ -354,6 +354,24 @@ class FEntityManager {
     }
 
     /**
+     * remove an object from the database and flush changes.
+     */
+    public static function removeAndFlush($obj) {
+
+        self::$entityManager->remove($obj); // Remove the object
+            self::$entityManager->flush(); // Flush changes to the database
+  
+    }
+
+    /**
+     * Begin a transaction.
+     * This method is used to start a transaction before performing any database operations.
+     */
+    public static function beginTransaction() {
+        self::$entityManager->getConnection()->beginTransaction(); // Begin transaction
+    }
+
+    /**
      * Execute a DQL query with a pessimistic write lock.
      * This method is used to lock the table for writing to prevent concurrent modifications.
      */

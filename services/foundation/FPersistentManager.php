@@ -21,6 +21,18 @@ class FPersistentManager {
   
 
     ////////TRANSAZIONI E LOCKING
+
+
+    /**
+     * this method is used to begin a transaction
+     * it is used to prevent error like db downtime
+     */
+    public static function beginTransaction() {
+       
+        FEntityManager::getInstance()->beginTransaction();
+    }
+
+
     /**
      * return object by id with locking the tuple 
      */
@@ -47,6 +59,15 @@ class FPersistentManager {
      */
     public static function persistInTransaction($obj) {
         FEntityManager::getInstance()->persistAndFlush($obj);
+    }
+
+    /**
+     * remove an object in the database
+     * this method is used to remove an object in the database inside a transaction
+     * it is used to prevent concurrent modifications on the same table
+     */
+    public static function removeInTransaction($obj) {
+        FEntityManager::getInstance()->removeAndFlush($obj);
     }
 
     /**

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const manualInputs = ['cc-name', 'cc-number', 'cc-expiration', 'cc-cvv'];
 
   // Disabilita il form di sinistra se non ci sono carte salvate
-  if (!methodSelect ) {
+  if (!methodSelect|| methodSelect.options.length === 0) {
      methodSelect.disabled = true;
      submitBtnLeft.disabled = true;
   }
