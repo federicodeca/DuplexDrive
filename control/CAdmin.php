@@ -69,16 +69,17 @@ class CAdmin {
     // add cars in the database
     public static function addCar()
     {    
-         if (CAdmin::isLogged()) {
+        if (CAdmin::isLogged()) {
         $view = new VAdmin();
 
+        FPersistentManager::getInstance()->beginTransaction(); // Start a transaction    
         if (UHTTPMethods::post('carType') == 'rental_car') {
             $car = new ECarForRent(UHTTPMethods::post('carModel'), UHTTPMethods::post('carBrand'), UHTTPMethods::post('carColor'), UHTTPMethods::post('carHorsepower'),UHTTPMethods::post('carDisplacement'), UHTTPMethods::post('carSeats'),UHTTPMethods::post('carFuelType'),UHTTPMethods::post('carPrice'), UHTTPMethods::post('carDescription'));
-            $check = FPersistentManager::getInstance()->uploadObj($car);
+            $check = FPersistentManager::getInstance()->persistInTransaction($car);
             
         } elseif (UHTTPMethods::post('carType') == 'car_for_sale') {
             $car = new ECarForSale(UHTTPMethods::post('carModel'), UHTTPMethods::post('carBrand'), UHTTPMethods::post('carColor'), UHTTPMethods::post('carHorsepower'),UHTTPMethods::post('carDisplacement'), UHTTPMethods::post('carSeats'),UHTTPMethods::post('carFuelType'),UHTTPMethods::post('carPrice'), 1, UHTTPMethods::post('condition'));
-            $check = FPersistentManager::getInstance()->uploadObj($car);
+            $check = FPersistentManager::getInstance()->persistInTransaction($car);
         }
 
         $photos= UHTTPMethods::multipleFiles('carImages');
@@ -86,11 +87,13 @@ class CAdmin {
             $blobFile=file_get_contents($photo['tmp_name']);
             $image = new EImage($photo['name'],$photo['size'], $photo['type'],$blobFile);
             $image->setCar($car); // link image to car
-            FPersistentManager::getInstance()->uploadObj($image);
+            FPersistentManager::getInstance()->persistInTransaction($image);
         }
+        FPersistentManager::getInstance()->unlock(); // Commit the transaction
 
         if ($check) {
             $view->showCarSuccess();
+
             } else {$view->showCarError(); }
         }    
     }
@@ -131,14 +134,16 @@ class CAdmin {
     
     public  static function checkLicense (int $id) {
          if (CAdmin::isLogged()) {
+        FPersistentManager::getInstance()->beginTransaction();
         $license = FPersistentManager::getInstance()->retriveLicense($id);
         $license->setChecked(true);
         $user = $license->getUserId();
         if ($user) {
             $user->setVerified(true);
         }
-        $entityManager = FEntityManager::getEntityManager();
-        $entityManager->flush();
+        FPersistentManager::getInstance()->persistInTransaction($user); // Save changes to user
+        FPersistentManager::getInstance()->persistInTransaction($license); // Save changes to license
+        FPersistentManager::getInstance()->unlock(); // Commit the transaction
 
         $view = new VAdmin();
         $view->showCheckSuccess();
@@ -210,7 +215,7 @@ class CAdmin {
             }
             else{             
 
-                FPersistentManager::getInstance()::unlock();
+                FPersistentManager::getInstance()->unlock();
             
              $view->showOverlappingError();
             }
