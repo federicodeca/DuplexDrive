@@ -32,6 +32,29 @@
 
 
   <body>
+  <div id="cookie-disabled-warning" >
+    
+  <div id="cookie-banner">
+        <strong>⚠️ I cookie sono disattivati nel tuo browser.</strong><br>
+        Alcune funzionalità del sito non funzioneranno correttamente.<br>
+        <a href="#" onclick="document.getElementById('cookie-help-modal').style.display = 'block'; return false;" style="color:#a00; text-decoration: underline;"><strong>Clicca e scopri come attivarli</strong></a>
+    </div>
+
+    <div id="cookie-help-modal">
+        <div id="custom-cookie-modal">
+            <h2 style="margin-top:0;">Come attivare i cookie</h2>
+            <p>Scegli il tuo browser per vedere la guida:</p>
+            <ul>
+                <li><a href="https://support.google.com/accounts/answer/61416?hl=it" target="_blank">Google Chrome</a></li>
+                <li><a href="https://support.mozilla.org/it/kb/Attivare%20e%20disattivare%20i%20cookie" target="_blank">Mozilla Firefox</a></li>
+                <li><a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank">Safari</a></li>
+                <li><a href="https://support.microsoft.com/it-it/topic/come-gestire-i-cookie-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank">Microsoft Edge</a></li>
+            </ul>
+            <button onclick="document.getElementById('cookie-help-modal').style.display = 'none'" style="margin-top:20px; padding:8px 16px;">Chiudi</button>
+        </div>
+    </div>
+
+    </div>
 
 
     <!-- ***** Preloader Start ***** -->
@@ -403,6 +426,7 @@
     <script src="/DuplexDrive/directory/Smarty/assets/js/owl.carousel.min.js"></script>
     
     <script src="\DuplexDrive\directory\Smarty\js\carousel-home.js"></script>
+    <script src="/DuplexDrive/directory/Smarty/js/cookie-check.js"></script>
 
   </body>
 </html>
