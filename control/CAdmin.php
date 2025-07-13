@@ -87,7 +87,7 @@ class CAdmin {
             $blobFile=file_get_contents($photo['tmp_name']);
             $image = new EImage($photo['name'],$photo['size'], $photo['type'],$blobFile);
             $image->setCar($car); // link image to car
-            FPersistentManager::getInstance()->persistInTransaction($image);
+            $check=FPersistentManager::getInstance()->persistInTransaction($image);
         }
         FPersistentManager::getInstance()->unlock(); // Commit the transaction
 

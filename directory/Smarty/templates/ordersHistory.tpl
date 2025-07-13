@@ -199,8 +199,8 @@
                                 <td>{$rent->getOrderId()}</td>
                                 <td>{$rent->getAuto()->getBrand()}</td>
                                 <td>{$rent->getAuto()->getModel()}</td>
-                                <td>{$rent->getIdUnavailability()->getStart()->format("d/m/Y")}</td>
-                                <td>{$rent->getIdUnavailability()->getEnd()->format("d/m/Y")}</td>
+                                <td>{$rent->getUnavailability()->getStart()->format("d/m/Y")}</td>
+                                <td>{$rent->getUnavailability()->getEnd()->format("d/m/Y")}</td>
                                 <td>{$rent->getTotalPrice()}</td>
                                 {assign var="total" value=$total + $rent->getTotalPrice()}
                             </tr>

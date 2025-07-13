@@ -83,7 +83,9 @@ class FEntityManager {
      */
     public static function commit(){
         try{
+            self::$entityManager->flush();
             self::$entityManager->getConnection()->commit();
+            return true;
         }catch(Exception $e){
             self::$entityManager->getConnection()->rollback();
         }
@@ -346,21 +348,33 @@ class FEntityManager {
      * This method is used to save an object in the database inside a transaction.
      * It is used to prevent concurrent modifications on the same table.
      */
-    public static function persistAndFlush($obj) {
-     
+    public static function persistInTransaction($obj) {
+        try {
             self::$entityManager->persist($obj); // Persist the object
-            self::$entityManager->flush(); // Flush changes to the database
+            return true;
+        }
+        catch (Exception $e) {
+            echo "ERROR: " . $e->getMessage();
+            return false;
+        }
+
    
     }
 
     /**
      * remove an object from the database and flush changes.
      */
-    public static function removeAndFlush($obj) {
+    public static function removeInTransaction($obj) {
+        try {
+            self::$entityManager->remove($obj);
+            return true;
+        }
+        catch (Exception $e) {
+            echo "ERROR: " . $e->getMessage();
+            return false;
 
-        self::$entityManager->remove($obj); // Remove the object
-            self::$entityManager->flush(); // Flush changes to the database
-  
+        }
+    
     }
 
     /**

@@ -58,7 +58,9 @@ class FPersistentManager {
      * it is used to prevent concurrent modifications on the same table
      */
     public static function persistInTransaction($obj) {
-        FEntityManager::getInstance()->persistAndFlush($obj);
+       $result=FEntityManager::getInstance()->persistInTransaction($obj);
+
+        return $result;
     }
 
     /**
@@ -67,7 +69,9 @@ class FPersistentManager {
      * it is used to prevent concurrent modifications on the same table
      */
     public static function removeInTransaction($obj) {
-        FEntityManager::getInstance()->removeAndFlush($obj);
+        $result=FEntityManager::getInstance()->removeInTransaction($obj);
+        
+        return $result;
     }
 
     /**
@@ -75,7 +79,9 @@ class FPersistentManager {
      * this method is used to unlock the table and close the transaction
      */
     public static function unlock(){
-        FEntityManager::getInstance()->commit();
+        $result=FEntityManager::getInstance()->commit();
+
+        return $result;
     }
 
 
@@ -95,8 +101,9 @@ class FPersistentManager {
       * DELETE OBJECT
      * delete an object by id in a TRANSACTION
      */
-    public static function removeObject($obj):void {
-        FEntityManager::getInstance()->deleteObj($obj);
+    public static function removeObject($obj): bool {
+        $result=FEntityManager::getInstance()->deleteObj($obj);
+        return $result;
     } 
 
 
