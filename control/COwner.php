@@ -128,17 +128,22 @@ class COwner {
             $start = new DateTime("$year-$month-01");
             $end = (clone $start)->modify('+1 month'); // add an entire month to include the last day of the month ex= 01 jan till 01 feb excluded
             $AllDay = [];
+            error_log("Start: " . $start->format('Y-m-d H:i:s'));
+            error_log("End: " . $end->format('Y-m-d H:i:s'));
 
-            $period = new DatePeriod($start, new DateInterval('P1D'), $end); // Create a period of one day intervals from start to end
+            $period = new DatePeriod($start, new DateInterval('P1D'), $end); 
+            // Create a period of one day intervals from start to end
             foreach ($period as $data) {
                 $AllDay[] = $data->format('Y-m-d');
             }
 
             $rentsPerPeriod = FPersistentManager::getInstance()->getRentsForPeriod($start, $end);
+
             $rentTotalPerDay = [];
+            
 
             foreach ($rentsPerPeriod as $order) {
-                $date = $order->getOrderDate()->format('Y-m-d');
+                $date = $order->getUnavailability()->getStart()->format('Y-m-d');
                 if (!isset($rentTotalPerDay[$date])) {
                     $rentTotalPerDay[$date] = $order->getTotalPrice();
                 }
@@ -179,6 +184,7 @@ class COwner {
             $year= UHTTPMethods::post('year');
             $start = new DateTime("$year-01-01");
             $end = (clone $start)->modify('+1 year');
+
       
      
             

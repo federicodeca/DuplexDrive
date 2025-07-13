@@ -10,7 +10,7 @@ class FRent {
     }
 
     public static function retrieveRentsForPeriod($start, $end) {
-        $dql="SELECT r FROM ERent r WHERE r.orderDate >= :start AND r.orderDate < :end";
+        $dql="SELECT r FROM ERent r JOIN r.unavailability u WHERE u.start >= :start AND u.start <= :end";
         $params = [
             'start' => $start,
             'end' => $end

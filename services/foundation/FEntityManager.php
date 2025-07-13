@@ -249,7 +249,7 @@ class FEntityManager {
             self::$entityManager->getConnection()->commit();     // commit transaction, object is saved correctly
             return true;
             } catch (\Exception $e) {
-            $entityManager->getConnection()->rollBack(); // annulla tutto
+            self::$entityManager->getConnection()->rollBack(); // annulla tutto
             throw $e;
         }
     }
