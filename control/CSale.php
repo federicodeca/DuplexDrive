@@ -71,7 +71,7 @@ class CSale {
 
         $infout = CUser::getUserStatus();
         $view = new VSale();
-        $view->showCarsForSale($filteredCars, $infout, $currentPage, $totalPages, $models);
+        $view->showCarsForSale($filteredCars, $infout, $currentPage, $totalPages, $models,$brand, $model, $price);
     }
 
 

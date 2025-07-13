@@ -141,7 +141,7 @@
                         {/foreach}
                       </ul>
                       <div style="width: 50%;">
-                        <input type="text" class="form-control" name="brand" readonly id="brandInput" placeholder="brand">
+                        <input type="text" class="form-control" name="brand" readonly id="brandInput" placeholder="{if isset($selectedBrand)}{$selectedBrand}{else}brand{/if}">
                       </div>
                     </div>
                   </div>
@@ -158,7 +158,7 @@
                         {/foreach}
                       </ul>
                       <div style="width: 50%;">
-                      <input type="text" class="form-control" name="model"  id="modelInput" aria-label="Text input with dropdown button" placeholder="model" readonly>
+                      <input type="text" class="form-control" name="model"  readonly id="modelInput" aria-label="Text input with dropdown button"  placeholder="{if isset($selectedModel)}{$selectedModel}{else}model{/if}" >
                       </div>
                     </div>
                   </div>
@@ -166,7 +166,7 @@
                   <div class="col-md-4 mt-5">
                     <div class="form-group">
                       <label for="formControlRange" class="text-white">Prezzo max: <span id="priceValue">0</span> €</label>
-                      <input type="range" class="form-control-range" id="formControlRange" name="price" min="0" max="100000" step="1000" value="100000" >
+                      <input type="range" class="form-control-range" id="formControlRange" name="price" min="0" max="100000" step="1000" value="{if isset($price)}{$price}{else}100000{/if}" >
                     </div>
                   </div>
                 </div>

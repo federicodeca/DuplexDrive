@@ -13,7 +13,7 @@ class VSale{
 
     // ======================== CAR SALE ========================
 
-    public function showCarsForSale($filteredCars, $infout, $currentPage,$totalPages,$models) {
+    public function showCarsForSale($filteredCars, $infout, $currentPage,$totalPages,$models,$brand, $model, $price) {
         $this->smarty->assign('filteredCars', $filteredCars);
         $this->smarty->assign('isLogged', $infout['isLogged']);
         $this->smarty->assign('username', $infout['username']);
@@ -21,6 +21,9 @@ class VSale{
         $this->smarty->assign('currentPage', $currentPage);
         $this->smarty->assign('totalPages', $totalPages);
         $this->smarty->assign('models', $models);
+        $this->smarty->assign('selectedBrand', $brand);
+        $this->smarty->assign('selectedModel', $model);
+        $this->smarty->assign('price', $price);
         $this->smarty->display('carsForSaleList.tpl');
     }
 
