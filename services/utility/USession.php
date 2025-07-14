@@ -6,7 +6,7 @@ class USession {
 
     private function __construct() {
 
-
+        session_set_cookie_params(COOKIE_EXP);
         session_start();
     }
 

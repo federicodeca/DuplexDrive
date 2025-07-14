@@ -129,14 +129,7 @@
               <input type="text" class="form-control" id="inputAddress"  name="address" required ="">
             </div>
 
-            <div class="col-12" style="margin-top: 20px;" >
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck" style="color:aliceblue">
-                  Check me out
-                </label>
-              </div>
-            </div>
+
             <div class="col-12" style="margin-top: 20px;" >
               <button type="submit" class="btn btn-primary" style="color:aliceblue">Sign in</button>
             </div>

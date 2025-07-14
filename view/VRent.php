@@ -72,7 +72,7 @@ class VRent{
         $this->smarty->assign('car', $car);
         $this->smarty->assign('surcharges', $surcharges);
         $this->smarty->assign('basePrice', $basePrice);
-        $this->smarty->display('CarDetails.tpl');
+        $this->smarty->display('carDetails.tpl');
     }
 
 
