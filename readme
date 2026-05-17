@@ -1,1 +1,14 @@
-this is project a for an app to manage car shop
+The folder WebApp contains a webApp sample developed in PHP, for practical aim.
+Duplex Drive is a web application that allows any car dealership to easily and efficiently manage the purchase and rental of their vehicles. Through a quick and streamlined interaction, it encourages users to place an order without requiring lengthy bureaucratic procedures that might discourage customers. It also provides a tool for administrators (dealership employees) and a dedicated section for the company owner.
+
+For the installation (XAMPP and Composer are required):
+
+Download the code directly into the htdocs folder.
+
+Extract the .zip folder.
+
+Rename the folder to DuplexDrive.
+
+Run "composer install" from the terminal inside the project folder.
+
+Open the "config/config" file and modify the database access credentials.
